@@ -586,7 +586,7 @@
 
     <link name="epaule">
         <visual>
-            <origin xyz="0.0299938 -1.83141e-07 -0.2175" rpy="-1.5708 2.86543e-18 1.5708"/>
+            <origin xyz="0.0299938 -1.83141e-07 -0.2195" rpy="-1.5708 -1.14907e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_3.stl"/>
             </geometry>
@@ -595,7 +595,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0299938 -1.83141e-07 -0.2175" rpy="-1.5708 2.86543e-18 1.5708"/>
+            <origin xyz="0.0299938 -1.83141e-07 -0.2195" rpy="-1.5708 -1.14907e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_3.stl"/>
             </geometry>
@@ -604,7 +604,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 -0.115907 -0.210439" rpy="-2.35619 -1.39963e-14 5.00615e-16"/>
+            <origin xyz="0.0607598 -0.115907 -0.212439" rpy="-2.35619 7.02848e-15 5.33246e-16"/>
             <geometry>
                 <mesh filename="package://hip_16.stl"/>
             </geometry>
@@ -613,7 +613,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.115907 -0.210439" rpy="-2.35619 -1.39963e-14 5.00615e-16"/>
+            <origin xyz="0.0607598 -0.115907 -0.212439" rpy="-2.35619 7.02848e-15 5.33246e-16"/>
             <geometry>
                 <mesh filename="package://hip_16.stl"/>
             </geometry>
@@ -622,7 +622,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 9.03428e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 9.15934e-16"/>
             <geometry>
                 <mesh filename="package://hip_10.stl"/>
             </geometry>
@@ -631,7 +631,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 9.03428e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 9.15934e-16"/>
             <geometry>
                 <mesh filename="package://hip_10.stl"/>
             </geometry>
@@ -640,7 +640,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0300778 -1.83141e-07 -0.2175" rpy="-1.5708 2.86543e-18 1.5708"/>
+            <origin xyz="0.0300778 -1.83141e-07 -0.2195" rpy="-1.5708 -1.09074e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_4.stl"/>
             </geometry>
@@ -649,7 +649,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0300778 -1.83141e-07 -0.2175" rpy="-1.5708 2.86543e-18 1.5708"/>
+            <origin xyz="0.0300778 -1.83141e-07 -0.2195" rpy="-1.5708 -1.09074e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_4.stl"/>
             </geometry>
@@ -658,7 +658,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 4.16334e-17"/>
             <geometry>
                 <mesh filename="package://hip_6.stl"/>
             </geometry>
@@ -667,7 +667,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 4.16334e-17"/>
             <geometry>
                 <mesh filename="package://hip_6.stl"/>
             </geometry>
@@ -676,7 +676,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 1.02219e-14 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 3.11385e-14 4.16334e-17"/>
             <geometry>
                 <mesh filename="package://hip_11.stl"/>
             </geometry>
@@ -685,7 +685,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 1.02219e-14 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 3.11385e-14 4.16334e-17"/>
             <geometry>
                 <mesh filename="package://hip_11.stl"/>
             </geometry>
@@ -694,7 +694,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.16334e-16"/>
             <geometry>
                 <mesh filename="package://hip_3.stl"/>
             </geometry>
@@ -703,7 +703,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.16334e-16"/>
             <geometry>
                 <mesh filename="package://hip_3.stl"/>
             </geometry>
@@ -712,7 +712,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 1.92788e-17 8.56394e-16"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09359e-14 8.88178e-16"/>
             <geometry>
                 <mesh filename="package://hip_17.stl"/>
             </geometry>
@@ -721,7 +721,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 1.92788e-17 8.56394e-16"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09359e-14 8.88178e-16"/>
             <geometry>
                 <mesh filename="package://hip_17.stl"/>
             </geometry>
@@ -730,7 +730,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0576778 0.117439 -0.208906" rpy="-0.785398 8.96297e-16 1.35676e-14"/>
+            <origin xyz="0.0606778 -0.115907 -0.212439" rpy="-2.35619 3.45294e-14 -7.37995e-16"/>
             <geometry>
                 <mesh filename="package://hip_9.stl"/>
             </geometry>
@@ -739,7 +739,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0576778 0.117439 -0.208906" rpy="-0.785398 8.96297e-16 1.35676e-14"/>
+            <origin xyz="0.0606778 -0.115907 -0.212439" rpy="-2.35619 3.45294e-14 -7.37995e-16"/>
             <geometry>
                 <mesh filename="package://hip_9.stl"/>
             </geometry>
@@ -748,7 +748,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 0.00108347 -0.258" rpy="-1.5708 7.16371e-14 9.71445e-16"/>
+            <origin xyz="0.0607938 0.00108347 -0.26" rpy="-1.5708 9.35987e-14 9.99201e-16"/>
             <geometry>
                 <mesh filename="package://hip_15.stl"/>
             </geometry>
@@ -757,7 +757,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 0.00108347 -0.258" rpy="-1.5708 7.16371e-14 9.71445e-16"/>
+            <origin xyz="0.0607938 0.00108347 -0.26" rpy="-1.5708 9.35987e-14 9.99201e-16"/>
             <geometry>
                 <mesh filename="package://hip_15.stl"/>
             </geometry>
@@ -766,7 +766,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0647938 0.00108347 -0.258" rpy="-1.5708 1.65604e-14 6.76565e-14"/>
+            <origin xyz="0.0647938 0.00108347 -0.26" rpy="-1.5708 3.7477e-14 6.7682e-14"/>
             <geometry>
                 <mesh filename="package://hip_19.stl"/>
             </geometry>
@@ -775,7 +775,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0647938 0.00108347 -0.258" rpy="-1.5708 1.65604e-14 6.76565e-14"/>
+            <origin xyz="0.0647938 0.00108347 -0.26" rpy="-1.5708 3.7477e-14 6.7682e-14"/>
             <geometry>
                 <mesh filename="package://hip_19.stl"/>
             </geometry>
@@ -784,7 +784,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 0.00108347 -0.108" rpy="-1.5708 7.21874e-14 0"/>
+            <origin xyz="0.0607938 0.00108347 -0.11" rpy="-1.5708 9.27848e-14 2.77556e-17"/>
             <geometry>
                 <mesh filename="package://motor9225v5_2.stl"/>
             </geometry>
@@ -793,7 +793,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 0.00108347 -0.108" rpy="-1.5708 7.21874e-14 0"/>
+            <origin xyz="0.0607938 0.00108347 -0.11" rpy="-1.5708 9.27848e-14 2.77556e-17"/>
             <geometry>
                 <mesh filename="package://motor9225v5_2.stl"/>
             </geometry>
@@ -802,7 +802,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_5.stl"/>
             </geometry>
@@ -811,7 +811,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_5.stl"/>
             </geometry>
@@ -820,7 +820,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.02456e-16"/>
             <geometry>
                 <mesh filename="package://hip_2.stl"/>
             </geometry>
@@ -829,7 +829,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.02456e-16"/>
             <geometry>
                 <mesh filename="package://hip_2.stl"/>
             </geometry>
@@ -838,7 +838,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.20513e-14 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.86529e-15 0"/>
             <geometry>
                 <mesh filename="package://hip_7.stl"/>
             </geometry>
@@ -847,7 +847,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.20513e-14 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.86529e-15 0"/>
             <geometry>
                 <mesh filename="package://hip_7.stl"/>
             </geometry>
@@ -856,7 +856,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.16334e-16"/>
             <geometry>
                 <mesh filename="package://hip_1.stl"/>
             </geometry>
@@ -865,7 +865,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.21541e-14 -4.16334e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 8.76247e-15 -4.16334e-16"/>
             <geometry>
                 <mesh filename="package://hip_1.stl"/>
             </geometry>
@@ -874,7 +874,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.165 -0.0919163" rpy="-1.11023e-16 -5.30507e-14 1.62862e-14"/>
+            <origin xyz="0.0636938 0.00108347 -0.26" rpy="-1.5708 3.72051e-14 5.2401e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -883,7 +883,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.165 -0.0919163" rpy="-1.11023e-16 -5.30507e-14 1.62862e-14"/>
+            <origin xyz="0.0636938 0.00108347 -0.26" rpy="-1.5708 3.72051e-14 5.2401e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -892,7 +892,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_4.stl"/>
             </geometry>
@@ -901,7 +901,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_4.stl"/>
             </geometry>
@@ -910,7 +910,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_13.stl"/>
             </geometry>
@@ -919,7 +919,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 -1.10699e-25 0"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 2.09166e-14 2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_13.stl"/>
             </geometry>
@@ -928,7 +928,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 0.00108347 -0.258" rpy="-1.5708 7.18682e-14 9.02056e-16"/>
+            <origin xyz="0.0607938 0.00108347 -0.26" rpy="-1.5708 9.27848e-14 9.29812e-16"/>
             <geometry>
                 <mesh filename="package://hip_18.stl"/>
             </geometry>
@@ -937,7 +937,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 0.00108347 -0.258" rpy="-1.5708 7.18682e-14 9.02056e-16"/>
+            <origin xyz="0.0607938 0.00108347 -0.26" rpy="-1.5708 9.27848e-14 9.29812e-16"/>
             <geometry>
                 <mesh filename="package://hip_18.stl"/>
             </geometry>
@@ -946,7 +946,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0627938 0.00108347 -0.258" rpy="-1.5708 1.41744e-16 6.85831e-16"/>
+            <origin xyz="0.0627938 0.00108347 -0.26" rpy="-1.5708 2.10583e-14 7.07767e-16"/>
             <geometry>
                 <mesh filename="package://hip_8.stl"/>
             </geometry>
@@ -955,7 +955,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0627938 0.00108347 -0.258" rpy="-1.5708 1.41744e-16 6.85831e-16"/>
+            <origin xyz="0.0627938 0.00108347 -0.26" rpy="-1.5708 2.10583e-14 7.07767e-16"/>
             <geometry>
                 <mesh filename="package://hip_8.stl"/>
             </geometry>
@@ -964,7 +964,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -2.23118e-14 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 -1.39519e-15 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_12.stl"/>
             </geometry>
@@ -973,7 +973,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.258" rpy="-1.5708 -2.23118e-14 0"/>
+            <origin xyz="0.0606938 0.00108347 -0.26" rpy="-1.5708 -1.39519e-15 1.38778e-17"/>
             <geometry>
                 <mesh filename="package://hip_12.stl"/>
             </geometry>
@@ -982,7 +982,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 7.18682e-14 9.02056e-16"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 9.27848e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hip_14.stl"/>
             </geometry>
@@ -991,7 +991,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.00108347 -0.258" rpy="-1.5708 7.18682e-14 9.02056e-16"/>
+            <origin xyz="0.0607598 0.00108347 -0.26" rpy="-1.5708 9.27848e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hip_14.stl"/>
             </geometry>
@@ -1000,10 +1000,10 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.0167081 -7.94503e-05 -0.13102" rpy="0 0 0"/>
+            <origin xyz="-0.0165949 -7.94503e-05 -0.13302" rpy="0 0 0"/>
             <mass value="1.23"/>
-            <inertia ixx="0.00898763" ixy="1.62711e-06" ixz="2.20879e-05" iyy="0.00916853" iyz="-9.7706e-06"
-                     izz="0.00198856"/>
+            <inertia ixx="0.00898763" ixy="1.61607e-06" ixz="1.67935e-05" iyy="0.00917046" iyz="-9.7706e-06"
+                     izz="0.00199049"/>
         </inertial>
     </link>
 
@@ -1342,7 +1342,7 @@
 
     <link name="avantbras">
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -1351,7 +1351,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -1360,7 +1360,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -1369,7 +1369,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -1378,7 +1378,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -1387,7 +1387,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -1396,7 +1396,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -1405,7 +1405,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -1414,43 +1414,43 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="2.76478e-06 0.0634662 0.0415243" rpy="0 0 0"/>
+            <origin xyz="2.76478e-06 -0.0634662 -0.0415243" rpy="0 0 0"/>
             <mass value="0.34"/>
-            <inertia ixx="0.0024225" ixy="3.78677e-06" ixz="-7.53798e-08" iyy="0.00107662" iyz="-0.000776022"
+            <inertia ixx="0.0024225" ixy="-3.78677e-06" ixz="5.33358e-08" iyy="0.00107662" iyz="-0.000776024"
                      izz="0.00248712"/>
         </inertial>
     </link>
 
     <joint name="poignet_avt_g" type="revolute">
-        <origin xyz="-4.21885e-15 0.2 -0.065516" rpy="-1.25065e-14 4.26771e-14 -3.98097e-09"/>
+        <origin xyz="-4.27436e-15 0.2 -0.065516" rpy="-3.14159 -4.05626e-17 -2.77556e-16"/>
         <parent link="bras"/>
         <child link="avantbras"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-2.35619" upper="2.35619"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="coude_avt_g" type="revolute">
-        <origin xyz="0.0279938 -1.83141e-07 -0.093" rpy="-3.14159 1.5708 0"/>
+        <origin xyz="0.0319938 -1.83141e-07 -0.095" rpy="-3.14159 1.5708 0"/>
         <parent link="epaule"/>
         <child link="bras"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.872665" upper="0.698132"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="epaule_avt_g" type="revolute">
-        <origin xyz="0.123746 -0.360089 0.0733429" rpy="1.5708 4.49058e-09 6.38027e-10"/>
+        <origin xyz="0.123746 -0.360089 0.0733429" rpy="1.5708 -4.4944e-14 6.38027e-10"/>
         <parent link="chassis"/>
         <child link="epaule"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.523599" upper="1.39626"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <link name="epaulemiroir">
         <visual>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.0157e-14 -4.81097e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.0157e-14 -5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_15.stl"/>
             </geometry>
@@ -1459,7 +1459,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.0157e-14 -4.81097e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.0157e-14 -5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_15.stl"/>
             </geometry>
@@ -1468,7 +1468,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.034" rpy="1.5708 3.48953e-14 -3.02134e-39"/>
+            <origin xyz="0.0606938 0.00108347 -0.034" rpy="1.5708 3.48953e-14 4.33264e-30"/>
             <geometry>
                 <mesh filename="package://hipm_5.stl"/>
             </geometry>
@@ -1477,7 +1477,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.034" rpy="1.5708 3.48953e-14 -3.02134e-39"/>
+            <origin xyz="0.0606938 0.00108347 -0.034" rpy="1.5708 3.48953e-14 4.33264e-30"/>
             <geometry>
                 <mesh filename="package://hipm_5.stl"/>
             </geometry>
@@ -1486,7 +1486,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 2.07748e-14 -6.97919e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 2.07748e-14 -6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_11.stl"/>
             </geometry>
@@ -1495,7 +1495,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 2.07748e-14 -6.97919e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 2.07748e-14 -6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_11.stl"/>
             </geometry>
@@ -1504,7 +1504,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.117439 -0.0835936" rpy="0.785398 2.15085e-14 -1.38913e-14"/>
+            <origin xyz="0.0606938 0.117439 -0.0835936" rpy="0.785398 2.66641e-14 -1.3804e-14"/>
             <geometry>
                 <mesh filename="package://hipm_16.stl"/>
             </geometry>
@@ -1513,7 +1513,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.117439 -0.0835936" rpy="0.785398 2.15085e-14 -1.38913e-14"/>
+            <origin xyz="0.0606938 0.117439 -0.0835936" rpy="0.785398 2.66641e-14 -1.3804e-14"/>
             <geometry>
                 <mesh filename="package://hipm_16.stl"/>
             </geometry>
@@ -1522,7 +1522,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 4.96475e-14 -7.50395e-26"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 4.96475e-14 5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hipm_9.stl"/>
             </geometry>
@@ -1531,7 +1531,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 4.96475e-14 -7.50395e-26"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 4.96475e-14 5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hipm_9.stl"/>
             </geometry>
@@ -1540,7 +1540,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.08973e-14 8.56394e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.08973e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hipm_17.stl"/>
             </geometry>
@@ -1549,7 +1549,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.08973e-14 8.56394e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.08973e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hipm_17.stl"/>
             </geometry>
@@ -1558,7 +1558,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606118 0.117439 -0.0835936" rpy="0.785398 2.04178e-14 1.25967e-14"/>
+            <origin xyz="0.0606118 0.117439 -0.0835936" rpy="0.785398 2.13478e-14 1.25858e-14"/>
             <geometry>
                 <mesh filename="package://hipm_12.stl"/>
             </geometry>
@@ -1567,7 +1567,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606118 0.117439 -0.0835936" rpy="0.785398 2.04178e-14 1.25967e-14"/>
+            <origin xyz="0.0606118 0.117439 -0.0835936" rpy="0.785398 2.13478e-14 1.25858e-14"/>
             <geometry>
                 <mesh filename="package://hipm_12.stl"/>
             </geometry>
@@ -1576,7 +1576,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -3.47319e-29"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -5.52828e-24"/>
             <geometry>
                 <mesh filename="package://hipm_10.stl"/>
             </geometry>
@@ -1585,7 +1585,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -3.47319e-29"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -5.52828e-24"/>
             <geometry>
                 <mesh filename="package://hipm_10.stl"/>
             </geometry>
@@ -1594,7 +1594,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 -4.85723e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 -5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_18.stl"/>
             </geometry>
@@ -1603,7 +1603,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 -4.85723e-16"/>
+            <origin xyz="0.0607278 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 -5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_18.stl"/>
             </geometry>
@@ -1612,7 +1612,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0647278 0.00108347 -0.0345" rpy="1.5708 4.35623e-15 6.62688e-14"/>
+            <origin xyz="0.0647278 0.00108347 -0.0345" rpy="1.5708 4.35623e-15 6.62803e-14"/>
             <geometry>
                 <mesh filename="package://hipm_19.stl"/>
             </geometry>
@@ -1621,7 +1621,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0647278 0.00108347 -0.0345" rpy="1.5708 4.35623e-15 6.62688e-14"/>
+            <origin xyz="0.0647278 0.00108347 -0.0345" rpy="1.5708 4.35623e-15 6.62803e-14"/>
             <geometry>
                 <mesh filename="package://hipm_19.stl"/>
             </geometry>
@@ -1630,7 +1630,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0636278 0.00108347 -0.3645" rpy="-1.5708 3.75147e-14 5.19692e-14"/>
+            <origin xyz="0.0636278 0.00108347 -0.3645" rpy="-1.5708 3.62662e-14 5.19583e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -1639,7 +1639,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0636278 0.00108347 -0.3645" rpy="-1.5708 3.75147e-14 5.19692e-14"/>
+            <origin xyz="0.0636278 0.00108347 -0.3645" rpy="-1.5708 3.62662e-14 5.19583e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -1648,7 +1648,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 4.996e-16"/>
             <geometry>
                 <mesh filename="package://hipm_2.stl"/>
             </geometry>
@@ -1657,7 +1657,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 4.996e-16"/>
             <geometry>
                 <mesh filename="package://hipm_2.stl"/>
             </geometry>
@@ -1666,7 +1666,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_3.stl"/>
             </geometry>
@@ -1675,7 +1675,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_3.stl"/>
             </geometry>
@@ -1684,7 +1684,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 9.02056e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hipm_14.stl"/>
             </geometry>
@@ -1693,7 +1693,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 9.02056e-16"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 -5.09516e-14 9.4369e-16"/>
             <geometry>
                 <mesh filename="package://hipm_14.stl"/>
             </geometry>
@@ -1702,7 +1702,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 1.62583e-14 9.2297e-30"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 1.57865e-14 -1.86435e-23"/>
             <geometry>
                 <mesh filename="package://hipm_8.stl"/>
             </geometry>
@@ -1711,7 +1711,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 1.62583e-14 9.2297e-30"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 1.57865e-14 -1.86435e-23"/>
             <geometry>
                 <mesh filename="package://hipm_8.stl"/>
             </geometry>
@@ -1720,7 +1720,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 0.00108347 -0.1845" rpy="1.5708 -5.09516e-14 -1.38778e-15"/>
+            <origin xyz="0.0607278 0.00108347 -0.1845" rpy="1.5708 -5.09516e-14 -1.33227e-15"/>
             <geometry>
                 <mesh filename="package://motor9225v5_3.stl"/>
             </geometry>
@@ -1729,7 +1729,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 0.00108347 -0.1845" rpy="1.5708 -5.09516e-14 -1.38778e-15"/>
+            <origin xyz="0.0607278 0.00108347 -0.1845" rpy="1.5708 -5.09516e-14 -1.33227e-15"/>
             <geometry>
                 <mesh filename="package://motor9225v5_3.stl"/>
             </geometry>
@@ -1738,7 +1738,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -4.84351e-16"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -4.44089e-16"/>
             <geometry>
                 <mesh filename="package://hipm_13.stl"/>
             </geometry>
@@ -1747,7 +1747,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -4.84351e-16"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.09166e-14 -4.44089e-16"/>
             <geometry>
                 <mesh filename="package://hipm_13.stl"/>
             </geometry>
@@ -1756,7 +1756,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_1.stl"/>
             </geometry>
@@ -1765,7 +1765,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 -0.0339507" rpy="1.5708 3.48178e-14 5.55112e-16"/>
             <geometry>
                 <mesh filename="package://hipm_1.stl"/>
             </geometry>
@@ -1774,7 +1774,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.2844e-14 -7.21645e-16"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.2844e-14 -6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_6.stl"/>
             </geometry>
@@ -1783,7 +1783,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.2844e-14 -7.21645e-16"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.2844e-14 -6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_6.stl"/>
             </geometry>
@@ -1792,7 +1792,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.28311e-14 -3.45074e-29"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.28311e-14 -3.90789e-24"/>
             <geometry>
                 <mesh filename="package://hipm_4.stl"/>
             </geometry>
@@ -1801,7 +1801,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.28311e-14 -3.45074e-29"/>
+            <origin xyz="0.0606278 0.00108347 -0.0345" rpy="1.5708 2.28311e-14 -3.90789e-24"/>
             <geometry>
                 <mesh filename="package://hipm_4.stl"/>
             </geometry>
@@ -1810,7 +1810,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0300118 -1.83141e-07 -0.075" rpy="1.5708 1.81962e-15 1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 -0.075" rpy="1.5708 2.42113e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_6.stl"/>
             </geometry>
@@ -1819,7 +1819,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0300118 -1.83141e-07 -0.075" rpy="1.5708 1.81962e-15 1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 -0.075" rpy="1.5708 2.42113e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_6.stl"/>
             </geometry>
@@ -1828,7 +1828,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 3.94256e-14 -7.51071e-26"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 3.94256e-14 -1.37482e-23"/>
             <geometry>
                 <mesh filename="package://hipm_7.stl"/>
             </geometry>
@@ -1837,7 +1837,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 3.94256e-14 -7.51071e-26"/>
+            <origin xyz="0.0606938 0.00108347 -0.0345" rpy="1.5708 3.94256e-14 -1.37482e-23"/>
             <geometry>
                 <mesh filename="package://hipm_7.stl"/>
             </geometry>
@@ -1846,7 +1846,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0299278 -1.83141e-07 -0.075" rpy="1.5708 1.59758e-15 1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 -0.075" rpy="1.5708 2.42113e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_5.stl"/>
             </geometry>
@@ -1855,7 +1855,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0299278 -1.83141e-07 -0.075" rpy="1.5708 1.59758e-15 1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 -0.075" rpy="1.5708 2.42113e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_5.stl"/>
             </geometry>
@@ -2206,7 +2206,7 @@
 
     <link name="avantbras_2">
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -2215,7 +2215,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -2224,7 +2224,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -2233,7 +2233,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -2242,7 +2242,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -2251,7 +2251,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -2260,7 +2260,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -2269,7 +2269,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -2278,19 +2278,19 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="2.76478e-06 0.0634662 0.0415243" rpy="0 0 0"/>
+            <origin xyz="2.76478e-06 -0.0634662 -0.0415243" rpy="0 0 0"/>
             <mass value="0.34"/>
-            <inertia ixx="0.0024225" ixy="3.78677e-06" ixz="-7.53798e-08" iyy="0.00107662" iyz="-0.000776022"
+            <inertia ixx="0.0024225" ixy="-3.78677e-06" ixz="5.33358e-08" iyy="0.00107662" iyz="-0.000776024"
                      izz="0.00248712"/>
         </inertial>
     </link>
 
     <joint name="poignet_avt_d" type="revolute">
-        <origin xyz="-4.16334e-15 0.2 -0.065516" rpy="1.22677e-16 1.01389e-13 -3.98097e-09"/>
+        <origin xyz="-4.21885e-15 0.2 -0.065516" rpy="-3.14159 8.47616e-16 3.33067e-16"/>
         <parent link="bras_2"/>
         <child link="avantbras_2"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-2.35619" upper="2.35619"/>
         <joint_properties friction="0.0"/>
     </joint>
 
@@ -2299,22 +2299,22 @@
         <parent link="epaulemiroir"/>
         <child link="bras_2"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.349066" upper="0.872665"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="epaule_avt_d" type="revolute">
-        <origin xyz="-0.126016 -0.0654131 0.0733429" rpy="1.5708 1.33279e-23 -3.14159"/>
+        <origin xyz="-0.126016 -0.0654131 0.0733429" rpy="1.5708 2.03529e-14 -3.14159"/>
         <parent link="chassis"/>
         <child link="epaulemiroir"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.523599" upper="1.39626"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <link name="epaulemiroir_2">
         <visual>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.07447e-15 3.88578e-16"/>
             <geometry>
                 <mesh filename="package://hipm_3.stl"/>
             </geometry>
@@ -2323,7 +2323,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.07447e-15 3.88578e-16"/>
             <geometry>
                 <mesh filename="package://hipm_3.stl"/>
             </geometry>
@@ -2332,7 +2332,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0647278 -0.00108347 0.0345" rpy="-1.5708 1.88491e-14 -6.62688e-14"/>
+            <origin xyz="0.0647278 0.00108347 0.242" rpy="1.5708 -2.53871e-14 6.61138e-14"/>
             <geometry>
                 <mesh filename="package://hipm_19.stl"/>
             </geometry>
@@ -2341,7 +2341,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0647278 -0.00108347 0.0345" rpy="-1.5708 1.88491e-14 -6.62688e-14"/>
+            <origin xyz="0.0647278 0.00108347 0.242" rpy="1.5708 -2.53871e-14 6.61138e-14"/>
             <geometry>
                 <mesh filename="package://hipm_19.stl"/>
             </geometry>
@@ -2350,7 +2350,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 3.61338e-16 7.21645e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -6.89928e-15 -8.32667e-16"/>
             <geometry>
                 <mesh filename="package://hipm_6.stl"/>
             </geometry>
@@ -2359,7 +2359,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 3.61338e-16 7.21645e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -6.89928e-15 -8.32667e-16"/>
             <geometry>
                 <mesh filename="package://hipm_6.stl"/>
             </geometry>
@@ -2368,7 +2368,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 5.07415e-15 3.41182e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -1.26295e-14 1.99888e-24"/>
             <geometry>
                 <mesh filename="package://hipm_8.stl"/>
             </geometry>
@@ -2377,7 +2377,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 5.07415e-15 3.41182e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -1.26295e-14 1.99888e-24"/>
             <geometry>
                 <mesh filename="package://hipm_8.stl"/>
             </geometry>
@@ -2386,7 +2386,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.05589e-15 1.94289e-15"/>
             <geometry>
                 <mesh filename="package://hipm_2.stl"/>
             </geometry>
@@ -2395,7 +2395,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.05589e-15 1.94289e-15"/>
             <geometry>
                 <mesh filename="package://hipm_2.stl"/>
             </geometry>
@@ -2404,7 +2404,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 -0.00108347 0.1845" rpy="-1.5708 7.4157e-14 1.38778e-15"/>
+            <origin xyz="0.0607278 0.00108347 0.092" rpy="1.5708 -8.06949e-14 -1.83187e-15"/>
             <geometry>
                 <mesh filename="package://motor9225v5_3.stl"/>
             </geometry>
@@ -2413,7 +2413,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 -0.00108347 0.1845" rpy="-1.5708 7.4157e-14 1.38778e-15"/>
+            <origin xyz="0.0607278 0.00108347 0.092" rpy="1.5708 -8.06949e-14 -1.83187e-15"/>
             <geometry>
                 <mesh filename="package://motor9225v5_3.stl"/>
             </geometry>
@@ -2422,7 +2422,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606118 -0.117439 0.0835936" rpy="-2.35619 2.79412e-15 -1.25901e-14"/>
+            <origin xyz="0.0606118 0.117439 0.192906" rpy="0.785398 -1.0648e-14 1.22919e-14"/>
             <geometry>
                 <mesh filename="package://hipm_12.stl"/>
             </geometry>
@@ -2431,7 +2431,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606118 -0.117439 0.0835936" rpy="-2.35619 2.79412e-15 -1.25901e-14"/>
+            <origin xyz="0.0606118 0.117439 0.192906" rpy="0.785398 -1.0648e-14 1.22919e-14"/>
             <geometry>
                 <mesh filename="package://hipm_12.stl"/>
             </geometry>
@@ -2440,7 +2440,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 7.4157e-14 -9.02056e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.06949e-14 1.11022e-15"/>
             <geometry>
                 <mesh filename="package://hipm_14.stl"/>
             </geometry>
@@ -2449,7 +2449,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 7.4157e-14 -9.02056e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.06949e-14 1.11022e-15"/>
             <geometry>
                 <mesh filename="package://hipm_14.stl"/>
             </geometry>
@@ -2458,7 +2458,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 2.43053e-15 6.97919e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -8.96847e-15 -1.11022e-15"/>
             <geometry>
                 <mesh filename="package://hipm_11.stl"/>
             </geometry>
@@ -2467,7 +2467,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 2.43053e-15 6.97919e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -8.96847e-15 -1.11022e-15"/>
             <geometry>
                 <mesh filename="package://hipm_11.stl"/>
             </geometry>
@@ -2476,7 +2476,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 7.4157e-14 4.85723e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -8.06949e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hipm_18.stl"/>
             </geometry>
@@ -2485,7 +2485,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 7.4157e-14 4.85723e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -8.06949e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hipm_18.stl"/>
             </geometry>
@@ -2494,7 +2494,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0636278 -0.00108347 0.3645" rpy="1.5708 -1.43027e-14 -5.19626e-14"/>
+            <origin xyz="0.0636278 0.00108347 -0.088" rpy="-1.5708 7.77585e-15 5.20417e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -2503,7 +2503,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0636278 -0.00108347 0.3645" rpy="1.5708 -1.43027e-14 -5.19626e-14"/>
+            <origin xyz="0.0636278 0.00108347 -0.088" rpy="-1.5708 7.77585e-15 5.20417e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -2512,7 +2512,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 -2.64421e-14 1.97412e-28"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 1.99042e-14 5.04889e-26"/>
             <geometry>
                 <mesh filename="package://hipm_9.stl"/>
             </geometry>
@@ -2521,7 +2521,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 -2.64421e-14 1.97412e-28"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 1.99042e-14 5.04889e-26"/>
             <geometry>
                 <mesh filename="package://hipm_9.stl"/>
             </geometry>
@@ -2530,7 +2530,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 2.30807e-15 -8.56394e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.84601e-15 6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_17.stl"/>
             </geometry>
@@ -2539,7 +2539,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 2.30807e-15 -8.56394e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.84601e-15 6.10623e-16"/>
             <geometry>
                 <mesh filename="package://hipm_17.stl"/>
             </geometry>
@@ -2548,7 +2548,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0300118 1.83141e-07 0.075" rpy="-1.5708 -5.982e-15 -1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 0.2015" rpy="1.5708 8.92985e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_6.stl"/>
             </geometry>
@@ -2557,7 +2557,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0300118 1.83141e-07 0.075" rpy="-1.5708 -5.982e-15 -1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 0.2015" rpy="1.5708 8.92985e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_6.stl"/>
             </geometry>
@@ -2566,7 +2566,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 2.28879e-15 3.01739e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.82673e-15 -4.10784e-24"/>
             <geometry>
                 <mesh filename="package://hipm_10.stl"/>
             </geometry>
@@ -2575,7 +2575,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 2.28879e-15 3.01739e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 -8.82673e-15 -4.10784e-24"/>
             <geometry>
                 <mesh filename="package://hipm_10.stl"/>
             </geometry>
@@ -2584,7 +2584,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.07447e-15 3.05311e-16"/>
             <geometry>
                 <mesh filename="package://hipm_1.stl"/>
             </geometry>
@@ -2593,7 +2593,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.0011249 0.0339507" rpy="-1.5708 -1.26298e-14 -3.33067e-16"/>
+            <origin xyz="0.0606938 0.0011249 0.242549" rpy="1.5708 5.07447e-15 3.05311e-16"/>
             <geometry>
                 <mesh filename="package://hipm_1.stl"/>
             </geometry>
@@ -2602,7 +2602,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.034" rpy="-1.5708 -1.27074e-14 1.97215e-31"/>
+            <origin xyz="0.0606938 0.00108347 0.2425" rpy="1.5708 5.13344e-15 1.60982e-15"/>
             <geometry>
                 <mesh filename="package://hipm_5.stl"/>
             </geometry>
@@ -2611,7 +2611,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.034" rpy="-1.5708 -1.27074e-14 1.97215e-31"/>
+            <origin xyz="0.0606938 0.00108347 0.2425" rpy="1.5708 5.13344e-15 1.60982e-15"/>
             <geometry>
                 <mesh filename="package://hipm_5.stl"/>
             </geometry>
@@ -2620,7 +2620,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 3.74289e-16 2.78073e-29"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -6.91223e-15 -4.90236e-24"/>
             <geometry>
                 <mesh filename="package://hipm_4.stl"/>
             </geometry>
@@ -2629,7 +2629,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 3.74289e-16 2.78073e-29"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -6.91223e-15 -4.90236e-24"/>
             <geometry>
                 <mesh filename="package://hipm_4.stl"/>
             </geometry>
@@ -2638,7 +2638,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 2.28879e-15 4.84351e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -8.82673e-15 -4.71845e-16"/>
             <geometry>
                 <mesh filename="package://hipm_13.stl"/>
             </geometry>
@@ -2647,7 +2647,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606278 -0.00108347 0.0345" rpy="-1.5708 2.28879e-15 4.84351e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.242" rpy="1.5708 -8.82673e-15 -4.71845e-16"/>
             <geometry>
                 <mesh filename="package://hipm_13.stl"/>
             </geometry>
@@ -2656,7 +2656,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 -1.62202e-14 3.33294e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 9.68227e-15 0"/>
             <geometry>
                 <mesh filename="package://hipm_7.stl"/>
             </geometry>
@@ -2665,7 +2665,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.0345" rpy="-1.5708 -1.62202e-14 3.33294e-29"/>
+            <origin xyz="0.0606938 0.00108347 0.242" rpy="1.5708 9.68227e-15 0"/>
             <geometry>
                 <mesh filename="package://hipm_7.stl"/>
             </geometry>
@@ -2674,7 +2674,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0299278 1.83141e-07 0.075" rpy="-1.5708 -5.982e-15 -1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 0.2015" rpy="1.5708 8.92194e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_5.stl"/>
             </geometry>
@@ -2683,7 +2683,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0299278 1.83141e-07 0.075" rpy="-1.5708 -5.982e-15 -1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 0.2015" rpy="1.5708 8.92194e-15 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_5.stl"/>
             </geometry>
@@ -2692,7 +2692,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 7.33623e-14 4.81097e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -7.99003e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hipm_15.stl"/>
             </geometry>
@@ -2701,7 +2701,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607278 -0.00108347 0.0345" rpy="-1.5708 7.33623e-14 4.81097e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.242" rpy="1.5708 -7.99003e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hipm_15.stl"/>
             </geometry>
@@ -2710,7 +2710,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.117439 0.0835936" rpy="-2.35619 1.69686e-15 1.38913e-14"/>
+            <origin xyz="0.0606938 0.117439 0.192906" rpy="0.785398 -9.93164e-15 -1.40189e-14"/>
             <geometry>
                 <mesh filename="package://hipm_16.stl"/>
             </geometry>
@@ -2719,7 +2719,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.117439 0.0835936" rpy="-2.35619 1.69686e-15 1.38913e-14"/>
+            <origin xyz="0.0606938 0.117439 0.192906" rpy="0.785398 -9.93164e-15 -1.40189e-14"/>
             <geometry>
                 <mesh filename="package://hipm_16.stl"/>
             </geometry>
@@ -2728,9 +2728,9 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.0166451 7.90316e-05 0.135122" rpy="0 0 0"/>
+            <origin xyz="-0.0166451 -7.90316e-05 0.141378" rpy="0 0 0"/>
             <mass value="1.23081"/>
-            <inertia ixx="0.00905897" ixy="-2.09953e-06" ixz="0.000220206" iyy="0.00924287" iyz="7.49349e-06"
+            <inertia ixx="0.00905897" ixy="1.5955e-06" ixz="-0.000220206" iyy="0.00924287" iyz="7.16432e-06"
                      izz="0.00199167"/>
         </inertial>
     </link>
@@ -3070,7 +3070,7 @@
 
     <link name="avantbras_3">
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -3079,7 +3079,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -3088,7 +3088,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -3097,7 +3097,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -3106,7 +3106,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -3115,7 +3115,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -3124,7 +3124,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -3133,7 +3133,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -3142,43 +3142,43 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="2.76478e-06 0.0634662 0.0415243" rpy="0 0 0"/>
+            <origin xyz="2.76478e-06 -0.0634662 -0.0415243" rpy="0 0 0"/>
             <mass value="0.34"/>
-            <inertia ixx="0.0024225" ixy="3.78677e-06" ixz="-7.53798e-08" iyy="0.00107662" iyz="-0.000776022"
+            <inertia ixx="0.0024225" ixy="-3.78677e-06" ixz="5.33358e-08" iyy="0.00107662" iyz="-0.000776024"
                      izz="0.00248712"/>
         </inertial>
     </link>
 
     <joint name="poignet_ar_g" type="revolute">
-        <origin xyz="-4.21885e-15 0.2 -0.065516" rpy="1.08117e-14 8.49257e-14 8.32667e-16"/>
+        <origin xyz="-4.32987e-15 0.2 -0.065516" rpy="-3.14159 -9.28741e-16 -3.33067e-16"/>
         <parent link="bras_3"/>
         <child link="avantbras_3"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-2.35619" upper="2.35619"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="coude_ar_g" type="revolute">
-        <origin xyz="0.0319278 1.83141e-07 0.1995" rpy="1.38778e-15 -1.5708 0"/>
+        <origin xyz="0.0319278 -1.83141e-07 0.077" rpy="-3.14159 1.5708 0"/>
         <parent link="epaulemiroir_2"/>
         <child link="bras_3"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.349066" upper="0.872665"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="epaule_ar_g" type="revolute">
-        <origin xyz="0.123746 0.0650189 0.0733429" rpy="-1.5708 -3.66374e-15 6.38027e-10"/>
+        <origin xyz="0.123746 0.341324 0.0733429" rpy="1.5708 -1.19349e-15 6.38026e-10"/>
         <parent link="chassis"/>
         <child link="epaulemiroir_2"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.523599" upper="1.39626"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <link name="epaule_2">
         <visual>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -3.22032e-16 5.73594e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -1.0884e-15 -2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_6.stl"/>
             </geometry>
@@ -3187,7 +3187,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -3.22032e-16 5.73594e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -1.0884e-15 -2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_6.stl"/>
             </geometry>
@@ -3196,7 +3196,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0647938 -0.00108347 0.26" rpy="1.5708 -1.64675e-14 -6.72314e-14"/>
+            <origin xyz="0.0647278 0.00108347 0.0165" rpy="-1.5708 1.48202e-14 6.76681e-14"/>
             <geometry>
                 <mesh filename="package://hip_19.stl"/>
             </geometry>
@@ -3205,7 +3205,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0647938 -0.00108347 0.26" rpy="1.5708 -1.64675e-14 -6.72314e-14"/>
+            <origin xyz="0.0647278 0.00108347 0.0165" rpy="-1.5708 1.48202e-14 6.76681e-14"/>
             <geometry>
                 <mesh filename="package://hip_19.stl"/>
             </geometry>
@@ -3214,7 +3214,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 0.115907 0.212439" rpy="0.785398 1.3254e-14 -2.10969e-16"/>
+            <origin xyz="0.0606938 -0.115907 0.0640611" rpy="-2.35619 -1.50847e-14 4.49133e-16"/>
             <geometry>
                 <mesh filename="package://hip_16.stl"/>
             </geometry>
@@ -3223,7 +3223,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 0.115907 0.212439" rpy="0.785398 1.3254e-14 -2.10969e-16"/>
+            <origin xyz="0.0606938 -0.115907 0.0640611" rpy="-2.35619 -1.50847e-14 4.49133e-16"/>
             <geometry>
                 <mesh filename="package://hip_16.stl"/>
             </geometry>
@@ -3232,7 +3232,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -1.00884e-14 3.2679e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 1.02219e-14 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_11.stl"/>
             </geometry>
@@ -3241,7 +3241,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -1.00884e-14 3.2679e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 1.02219e-14 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_11.stl"/>
             </geometry>
@@ -3250,7 +3250,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0299938 1.83141e-07 0.2195" rpy="1.5708 -4.82716e-16 -1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 0.057" rpy="-1.5708 1.38778e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_3.stl"/>
             </geometry>
@@ -3259,7 +3259,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0299938 1.83141e-07 0.2195" rpy="1.5708 -4.82716e-16 -1.5708"/>
+            <origin xyz="0.0299278 -1.83141e-07 0.057" rpy="-1.5708 1.38778e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_3.stl"/>
             </geometry>
@@ -3268,7 +3268,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.165 0.0939163" rpy="3.14159 5.35687e-14 -1.52595e-14"/>
+            <origin xyz="0.0636278 0.00108347 0.0165" rpy="-1.5708 1.48514e-14 5.35017e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -3277,7 +3277,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.165 0.0939163" rpy="3.14159 5.35687e-14 -1.52595e-14"/>
+            <origin xyz="0.0636278 0.00108347 0.0165" rpy="-1.5708 1.48514e-14 5.35017e-14"/>
             <geometry>
                 <mesh filename="package://hip_20.stl"/>
             </geometry>
@@ -3286,7 +3286,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -7.22273e-14 -3.28463e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 7.07798e-14 8.74301e-16"/>
             <geometry>
                 <mesh filename="package://hip_14.stl"/>
             </geometry>
@@ -3295,7 +3295,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -7.22273e-14 -3.28463e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 7.07798e-14 8.74301e-16"/>
             <geometry>
                 <mesh filename="package://hip_14.stl"/>
             </geometry>
@@ -3304,7 +3304,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 -0.00108347 0.26" rpy="1.5708 -7.30412e-14 -3.97852e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.0165" rpy="-1.5708 7.26821e-14 1.45717e-15"/>
             <geometry>
                 <mesh filename="package://hip_15.stl"/>
             </geometry>
@@ -3313,7 +3313,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 -0.00108347 0.26" rpy="1.5708 -7.30412e-14 -3.97852e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.0165" rpy="-1.5708 7.26821e-14 1.45717e-15"/>
             <geometry>
                 <mesh filename="package://hip_15.stl"/>
             </geometry>
@@ -3322,7 +3322,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0627938 -0.00108347 0.26" rpy="1.5708 6.80319e-16 -6.85831e-16"/>
+            <origin xyz="0.0627278 0.00108347 0.0165" rpy="-1.5708 -1.59843e-15 1.13798e-15"/>
             <geometry>
                 <mesh filename="package://hip_8.stl"/>
             </geometry>
@@ -3331,7 +3331,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0627938 -0.00108347 0.26" rpy="1.5708 6.80319e-16 -6.85831e-16"/>
+            <origin xyz="0.0627278 0.00108347 0.0165" rpy="-1.5708 -1.59843e-15 1.13798e-15"/>
             <geometry>
                 <mesh filename="package://hip_8.stl"/>
             </geometry>
@@ -3340,7 +3340,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0576778 -0.117439 0.210906" rpy="2.35619 -3.78303e-16 -1.25409e-14"/>
+            <origin xyz="0.0606118 -0.115907 0.0640611" rpy="-2.35619 1.21328e-14 -8.06187e-16"/>
             <geometry>
                 <mesh filename="package://hip_9.stl"/>
             </geometry>
@@ -3349,7 +3349,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0576778 -0.117439 0.210906" rpy="2.35619 -3.78303e-16 -1.25409e-14"/>
+            <origin xyz="0.0606118 -0.115907 0.0640611" rpy="-2.35619 1.21328e-14 -8.06187e-16"/>
             <geometry>
                 <mesh filename="package://hip_9.stl"/>
             </geometry>
@@ -3358,7 +3358,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 1.33519e-16 3.2679e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -5.06484e-30 0"/>
             <geometry>
                 <mesh filename="package://hip_13.stl"/>
             </geometry>
@@ -3367,7 +3367,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 1.33519e-16 3.2679e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -5.06484e-30 0"/>
             <geometry>
                 <mesh filename="package://hip_13.stl"/>
             </geometry>
@@ -3376,7 +3376,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0300778 1.83141e-07 0.2195" rpy="1.5708 -2.46648e-15 -1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 0.057" rpy="-1.5708 1.38778e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_4.stl"/>
             </geometry>
@@ -3385,7 +3385,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0300778 1.83141e-07 0.2195" rpy="1.5708 -2.46648e-15 -1.5708"/>
+            <origin xyz="0.0300118 -1.83141e-07 0.057" rpy="-1.5708 1.38778e-16 1.5708"/>
             <geometry>
                 <mesh filename="package://ams_4.stl"/>
             </geometry>
@@ -3394,7 +3394,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 8.22062e-16 -9.03428e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 6.93889e-16"/>
             <geometry>
                 <mesh filename="package://hip_10.stl"/>
             </geometry>
@@ -3403,7 +3403,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 8.22062e-16 -9.03428e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 6.93889e-16"/>
             <geometry>
                 <mesh filename="package://hip_10.stl"/>
             </geometry>
@@ -3412,7 +3412,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 2.68535e-16 -1.20214e-31"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_4.stl"/>
             </geometry>
@@ -3421,7 +3421,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 2.68535e-16 -1.20214e-31"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_4.stl"/>
             </geometry>
@@ -3430,7 +3430,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.20717e-14 6.15846e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hip_1.stl"/>
             </geometry>
@@ -3439,7 +3439,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.20717e-14 6.15846e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hip_1.stl"/>
             </geometry>
@@ -3448,7 +3448,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 2.23118e-14 2.78122e-29"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -2.40519e-14 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_12.stl"/>
             </geometry>
@@ -3457,7 +3457,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 2.23118e-14 2.78122e-29"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -2.40519e-14 -5.55111e-17"/>
             <geometry>
                 <mesh filename="package://hip_12.stl"/>
             </geometry>
@@ -3466,7 +3466,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 -0.00108347 0.26" rpy="1.5708 -7.22273e-14 -3.28463e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.0165" rpy="-1.5708 7.18682e-14 7.63278e-16"/>
             <geometry>
                 <mesh filename="package://hip_18.stl"/>
             </geometry>
@@ -3475,7 +3475,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 -0.00108347 0.26" rpy="1.5708 -7.22273e-14 -3.28463e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.0165" rpy="-1.5708 7.18682e-14 7.63278e-16"/>
             <geometry>
                 <mesh filename="package://hip_18.stl"/>
             </geometry>
@@ -3484,7 +3484,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607938 -0.00108347 0.11" rpy="1.5708 -7.22273e-14 5.73594e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.1665" rpy="-1.5708 7.18682e-14 -1.38778e-16"/>
             <geometry>
                 <mesh filename="package://motor9225v5_2.stl"/>
             </geometry>
@@ -3493,7 +3493,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607938 -0.00108347 0.11" rpy="1.5708 -7.22273e-14 5.73594e-16"/>
+            <origin xyz="0.0607278 0.00108347 0.1665" rpy="-1.5708 7.18682e-14 -1.38778e-16"/>
             <geometry>
                 <mesh filename="package://motor9225v5_2.stl"/>
             </geometry>
@@ -3502,7 +3502,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.21541e-14 4.16334e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -4.71845e-16"/>
             <geometry>
                 <mesh filename="package://hip_2.stl"/>
             </geometry>
@@ -3511,7 +3511,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.21541e-14 4.16334e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -4.71845e-16"/>
             <geometry>
                 <mesh filename="package://hip_2.stl"/>
             </geometry>
@@ -3520,7 +3520,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 8.22062e-16 -8.40454e-31"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 -1.11022e-16"/>
             <geometry>
                 <mesh filename="package://hip_5.stl"/>
             </geometry>
@@ -3529,7 +3529,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 8.22062e-16 -8.40454e-31"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.74017e-15 -1.11022e-16"/>
             <geometry>
                 <mesh filename="package://hip_5.stl"/>
             </geometry>
@@ -3538,7 +3538,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -3.78349e-16 -2.828e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -1.06912e-15 8.04912e-16"/>
             <geometry>
                 <mesh filename="package://hip_17.stl"/>
             </geometry>
@@ -3547,7 +3547,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0607598 -0.00108347 0.26" rpy="1.5708 -3.78349e-16 -2.828e-16"/>
+            <origin xyz="0.0606938 0.00108347 0.0165" rpy="-1.5708 -1.06912e-15 8.04912e-16"/>
             <geometry>
                 <mesh filename="package://hip_17.stl"/>
             </geometry>
@@ -3556,7 +3556,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.20513e-14 1.46937e-39"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.37915e-14 -2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_7.stl"/>
             </geometry>
@@ -3565,7 +3565,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.20513e-14 1.46937e-39"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.37915e-14 -2.77556e-17"/>
             <geometry>
                 <mesh filename="package://hip_7.stl"/>
             </geometry>
@@ -3574,7 +3574,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.21541e-14 4.16334e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hip_3.stl"/>
             </geometry>
@@ -3583,7 +3583,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0606938 -0.00108347 0.26" rpy="1.5708 1.21541e-14 4.16334e-16"/>
+            <origin xyz="0.0606278 0.00108347 0.0165" rpy="-1.5708 -1.38943e-14 -5.27356e-16"/>
             <geometry>
                 <mesh filename="package://hip_3.stl"/>
             </geometry>
@@ -3592,10 +3592,10 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="-0.0167081 7.94503e-05 0.13302" rpy="0 0 0"/>
+            <origin xyz="-0.0166609 -7.94503e-05 0.14348" rpy="0 0 0"/>
             <mass value="1.23"/>
-            <inertia ixx="0.00898763" ixy="-2.13114e-06" ixz="-2.20879e-05" iyy="0.00916853" iyz="-1.00998e-05"
-                     izz="0.00198856"/>
+            <inertia ixx="0.00898763" ixy="1.61607e-06" ixz="1.67935e-05" iyy="0.00917046" iyz="-9.7706e-06"
+                     izz="0.00199049"/>
         </inertial>
     </link>
 
@@ -3934,7 +3934,7 @@
 
     <link name="avantbras_4">
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -3943,7 +3943,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_1.stl"/>
             </geometry>
@@ -3952,7 +3952,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -3961,7 +3961,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_2.stl"/>
             </geometry>
@@ -3970,7 +3970,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -3979,7 +3979,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201084 0.0325" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_4.stl"/>
             </geometry>
@@ -3988,7 +3988,7 @@
             </material>
         </collision>
         <visual>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -3997,7 +3997,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.165 -0.201114 0.03229" rpy="1.5708 1.5708 0"/>
+            <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0"/>
             <geometry>
                 <mesh filename="package://lowerleg_3.stl"/>
             </geometry>
@@ -4006,37 +4006,37 @@
             </material>
         </collision>
         <inertial>
-            <origin xyz="2.76478e-06 0.0634662 0.0415243" rpy="0 0 0"/>
+            <origin xyz="2.76478e-06 -0.0634662 -0.0415243" rpy="0 0 0"/>
             <mass value="0.34"/>
-            <inertia ixx="0.0024225" ixy="3.78677e-06" ixz="-7.53798e-08" iyy="0.00107662" iyz="-0.000776022"
+            <inertia ixx="0.0024225" ixy="-3.78677e-06" ixz="5.33358e-08" iyy="0.00107662" iyz="-0.000776024"
                      izz="0.00248712"/>
         </inertial>
     </link>
 
     <joint name="poignet_ar_d" type="revolute">
-        <origin xyz="-4.16334e-15 0.2 -0.065516" rpy="1.22677e-16 4.26771e-14 -3.98097e-09"/>
+        <origin xyz="-4.05231e-15 0.2 -0.065516" rpy="3.14159 -4.48145e-15 -9.21485e-15"/>
         <parent link="bras_4"/>
         <child link="avantbras_4"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-2.35619" upper="2.35619"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="coude_ar_d" type="revolute">
-        <origin xyz="0.0279938 1.83141e-07 0.095" rpy="-2.65094e-24 -1.5708 0"/>
+        <origin xyz="0.0319278 -1.83141e-07 0.1815" rpy="3.14159 1.5708 0"/>
         <parent link="epaule_2"/>
         <child link="bras_4"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.872665" upper="0.698132"/>
         <joint_properties friction="0.0"/>
     </joint>
 
     <joint name="epaule_ar_d" type="revolute">
-        <origin xyz="-0.126016 0.359695 0.0733429" rpy="-1.5708 6.69971e-24 -3.14159"/>
+        <origin xyz="-0.126016 0.0833899 0.0733429" rpy="1.5708 -4.75723e-14 -3.14159"/>
         <parent link="chassis"/>
         <child link="epaule_2"/>
         <axis xyz="0 0 1"/>
-        <limit effort="1" velocity="20"/>
+        <limit effort="1" velocity="20" lower="-0.523599" upper="1.39626"/>
         <joint_properties friction="0.0"/>
     </joint>
 
