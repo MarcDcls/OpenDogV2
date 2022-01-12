@@ -9,7 +9,7 @@ class OpenDog:
             self,
     ):
 
-        self.id = p.loadURDF("urdf/opendog.urdf", [0, 0, 0.6], p.getQuaternionFromEuler([0, 0, 0]))
+        self.id = p.loadURDF("urdf/robot.urdf", [0, 0, 0.6], p.getQuaternionFromEuler([0, 0, 0]))
         self.legs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]]
         self._buildJointNameToIdDict()
 
