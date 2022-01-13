@@ -1,10 +1,11 @@
 {
     "documentId": "339c9bf2423f747b8ce77e56",
-    "versionId": "2c5e0cd1e55e6071f61ab784",
+    "versionId": "657b42de191d7b0c81aa54a5",
     "outputFormat": "urdf",
     "assemblyName": "OpenDog",
     "robotName": "opendog",
     "useScads": false,
     "simplifySTLs": "all",
-    "mergeSTLs": "no"
+    "mergeSTLs": "no",
+    "ignore": []
 }
