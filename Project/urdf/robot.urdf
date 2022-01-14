@@ -583,6 +583,20 @@
 </inertial>
 </link>
 
+<link name="center">
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<mass value="1e-9" />
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+</link>
+<joint name="center_frame" type="fixed">
+<origin xyz="-0.00114401 -0.00271308 0.0708426" rpy="1.07093e-25 3.41171e-16 -1.5708" />
+<parent link="body" />
+<child link="center" />
+<axis xyz="0 0 0"/>
+</joint>
+
 <link name="hip">
 <visual>
 <origin xyz="0.0299938 -1.83141e-07 -0.2195" rpy="-1.5708 -1.14907e-16 1.5708" />
@@ -1380,17 +1394,15 @@
 <mesh filename="package://foot.stl"/>
 </geometry>
 <material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
 </material>
 </visual>
+<!-- Shapes for foot -->
 <collision>
-<origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0" />
+<origin xyz="0 -0.195916 -0.0978" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://foot.stl"/>
+<sphere radius="0.035" />
 </geometry>
-<material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
-</material>
 </collision>
 <visual>
 <origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0" />
@@ -2255,17 +2267,15 @@
 <mesh filename="package://foot.stl"/>
 </geometry>
 <material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
 </material>
 </visual>
+<!-- Shapes for foot -->
 <collision>
-<origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0" />
+<origin xyz="-2.77556e-17 -0.195916 -0.0978" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://foot.stl"/>
+<sphere radius="0.035" />
 </geometry>
-<material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
-</material>
 </collision>
 <visual>
 <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0" />
@@ -3148,17 +3158,15 @@
 <mesh filename="package://foot.stl"/>
 </geometry>
 <material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
 </material>
 </visual>
+<!-- Shapes for foot -->
 <collision>
-<origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0" />
+<origin xyz="8.32667e-17 -0.195916 -0.0978" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://foot.stl"/>
+<sphere radius="0.035" />
 </geometry>
-<material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
-</material>
 </collision>
 <inertial>
 <origin xyz="2.76478e-06 -0.0634662 -0.0415243" rpy="0 0 0"/>
@@ -4005,17 +4013,15 @@
 <mesh filename="package://foot.stl"/>
 </geometry>
 <material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
+<color rgba="0.615686 0.811765 0.929412 1.0"/>
 </material>
 </visual>
+<!-- Shapes for foot -->
 <collision>
-<origin xyz="0.165 0.201084 -0.0325" rpy="-1.5708 -1.5708 0" />
+<origin xyz="2.77556e-17 -0.195916 -0.0978" rpy="-1.5708 -1.5708 0" />
 <geometry>
-<mesh filename="package://foot.stl"/>
+<sphere radius="0.035" />
 </geometry>
-<material name="foot_material">
-<color rgba="0.815686 0.00392157 0.00392157 1.0"/>
-</material>
 </collision>
 <visual>
 <origin xyz="0.165 0.201114 -0.03229" rpy="-1.5708 -1.5708 0" />
