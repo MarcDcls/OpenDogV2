@@ -1,6 +1,6 @@
 import pinocchio
 from sys import argv
-from os.path import dirname, join, abspath
+from os.path import dirname, abspath
 
 pinocchio_model_dir = dirname(dirname(str(abspath(__file__))))
 
