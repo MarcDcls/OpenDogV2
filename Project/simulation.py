@@ -2,6 +2,7 @@ import time
 
 import pybullet as p
 import pybullet_data
+from customExecption import *
 
 class OpenDog:
 
@@ -23,7 +24,7 @@ class OpenDog:
     # def moveCylinders(self, V, force):
     #     for i in range(12):
     #         if 0.4455 - V[i] * 0.001 > -0.0044999 or 0.4455 - V[i] * 0.001 < -0.2045001:
-    #             print("ERROR !!! Le vérin ", i, "est hors limites : ",  0.4455 - V[i] * 0.001)
+    #             print("ERROR !!! Le verin ", i, "est hors limites : ",  0.4455 - V[i] * 0.001)
     #     p.setJointMotorControl2(self.id, self.joint_name_to_id['0v1'], targetPosition=0.4455 - V[0] * 0.001,
     #                             controlMode=p.POSITION_CONTROL, force=force)
     #     p.setJointMotorControl2(self.id, self.joint_name_to_id['0v2'], targetPosition=0.4455 - V[1] * 0.001,
@@ -51,9 +52,9 @@ class OpenDog:
 
     def getCOM(self):
         """
-        Calcule les coordonnées du centre de masse de l'OpenDog
+        Calcule les coordonnees du centre de masse de l'OpenDog
 
-        :return: coordonnées du centre de masse
+        :return: coordonnees du centre de masse
         """
         nb_links = p.getNumJoints(self.id)
         base_pos = p.getBasePositionAndOrientation(self.id)[0]
@@ -67,13 +68,63 @@ class OpenDog:
             mass += link_mass
         return [com[0] / mass, com[1] / mass, com[2] / mass]
 
+    def moveHip(self,id,position):
+        try:
+            if id not in [1,5,9,13] :
+                raise JoinNotRecognizedAsHip
+            else :
+                if position < -0.524 or position > 1.396 :
+                    raise OutOfRange
+                else :
+                    #something with with pybullet
+                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
+        except JoinNotRecognizedAsHip:
+            print("Movement impossibe : you are not calling a hip, change your value")
+            print()
+        except OutOfRange: 
+            print('Movement impossible : position input is out of range')
+            print()
+
+    def moveKnee(self,id,position):
+        try:
+            if id not in [2,6,10,14] :
+                raise JoinNotRecognizedAsKnee
+            else :
+                if position < -0.873 or position > 0.698 :
+                    raise OutOfRange
+                else :
+                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
+        except JoinNotRecognizedAsKnee:
+            print("Movement impossibe : you are not calling a knee, change your value")
+            print()
+        except OutOfRange: 
+            print('Movement impossible : position input is out of range')
+            print()
+
+    def moveAnkle(self,id,position):
+        try:
+            if id not in [3,7,11,15] :
+                raise JoinNotRecognizedAsHip
+            else :
+                if position < -0.524 or position > 1.396 :
+                    raise OutOfRange
+                else :
+                    #something with with pybullet
+                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
+        except JoinNotRecognizedAsHip:
+            print("Movement impossibe : you are not calling a hip, change your value")
+            print()
+        except OutOfRange: 
+            print('Movement impossible : position input is out of range')
+            print()
+
 def draw(pt, color=[1, 0, 0], durationTime=0):
     """
     Trace un point lors de la simulation
 
-    :param pt: coordonnées du point
+    :param pt: coordonnees du point
     :param color: couleur du point
-    :param durationTime: durée en secondes d'affichage du point
+    :param durationTime: duree en secondes d'affichage du point
     :return: None
     """
     end_pt = [pt[0]+0.0025, pt[1], pt[2]]
@@ -88,22 +139,29 @@ planeId = p.loadURDF("plane.urdf")
 p.setGravity(0, 0, -10)
 opendog = OpenDog()
 
-FRAME_RATE = 1 / 10 # Fréquence à laquelle un ordre est transmis au vérins
-TICK_RATE = 1 / 240 # Fréquence à laquelle le simulateur s'actualise
 
-# p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])
-p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 0, 0, 1])
-p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])
-p.changeVisualShape(opendog.id, 2, rgbaColor=[1, 0, 0, 1])
-p.changeVisualShape(opendog.id, 3, rgbaColor=[1, 1, 0, 1])
-p.changeVisualShape(opendog.id, 4, rgbaColor=[1, 1, 0, 1])
-p.changeVisualShape(opendog.id, 5, rgbaColor=[1, 1, 0, 1])
-p.changeVisualShape(opendog.id, 6, rgbaColor=[0, 1, 0, 1])
-p.changeVisualShape(opendog.id, 7, rgbaColor=[0, 1, 0, 1])
-p.changeVisualShape(opendog.id, 8, rgbaColor=[0, 1, 0, 1])
-p.changeVisualShape(opendog.id, 9, rgbaColor=[0, 0, 1, 1])
-p.changeVisualShape(opendog.id, 10, rgbaColor=[0, 0, 1, 1])
-p.changeVisualShape(opendog.id, 11, rgbaColor=[0, 0, 1, 1])
+
+FRAME_RATE = 1 / 10 # Frequence a laquelle un ordre est transmis au verins
+TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
+
+p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])#tronc
+p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 1, 1, 1])#center frame
+p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])#hip front left
+p.changeVisualShape(opendog.id, 2, rgbaColor=[1, 0, 0, 1])#upperleg front left
+p.changeVisualShape(opendog.id, 3, rgbaColor=[1, 0, 0, 1])#lowerleg front left
+p.changeVisualShape(opendog.id, 4, rgbaColor=[1, 0, 0, 1]) #foot_fl frame
+p.changeVisualShape(opendog.id, 5, rgbaColor=[0, 1, 0, 1])#mirrorhip back right
+p.changeVisualShape(opendog.id, 6, rgbaColor=[0, 1, 0, 1])#upperleg front right
+p.changeVisualShape(opendog.id, 7, rgbaColor=[0, 1, 0, 1])#lowerleg front right
+p.changeVisualShape(opendog.id, 8, rgbaColor=[0, 1, 0, 1])#foot_fr frame
+p.changeVisualShape(opendog.id, 9, rgbaColor=[0, 0, 1, 1])#mirrorhip back left
+p.changeVisualShape(opendog.id, 10, rgbaColor=[0, 0, 1, 1])#upperleg back left 
+p.changeVisualShape(opendog.id, 11, rgbaColor=[0, 0, 1, 1])#lowerleg back left
+p.changeVisualShape(opendog.id, 12, rgbaColor=[0, 0, 1, 1])#foot_bl frame
+p.changeVisualShape(opendog.id, 13, rgbaColor=[1, 1, 0, 1])#hip back right
+p.changeVisualShape(opendog.id, 14, rgbaColor=[1, 1, 0, 1])#upperleg back right 
+p.changeVisualShape(opendog.id, 15, rgbaColor=[1, 1, 0, 1])#lowerleg back right
+p.changeVisualShape(opendog.id, 16, rgbaColor=[1, 1, 0, 1])#foot_br frame
 
 
 for i in range(10000):
@@ -112,8 +170,8 @@ for i in range(10000):
     # for i in range(p.getNumJoints(opendog.id)):
     #     print(i, ":", p.getLinkState(opendog.id, i)[0])
 
-    draw(opendog.getCOM())
-
+    # draw(opendog.getCOM())
+    
     time.sleep(TICK_RATE)
 
 p.disconnect()
