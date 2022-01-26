@@ -69,6 +69,11 @@ class OpenDog:
         return [com[0] / mass, com[1] / mass, com[2] / mass]
 
     def moveHip(self,id,position):
+        """
+        Allow movement of a given hip
+        :param id: hip joint id
+        :param position: desired angular position 
+        """
         try:
             if id not in [1,5,9,13] :
                 raise JoinNotRecognizedAsHip
@@ -86,6 +91,11 @@ class OpenDog:
             print()
 
     def moveKnee(self,id,position):
+        """
+        Allow movement of a given knee
+        :param id: knee joint id
+        :param position: desired angular position 
+        """
         try:
             if id not in [2,6,10,14] :
                 raise JoinNotRecognizedAsKnee
@@ -102,6 +112,11 @@ class OpenDog:
             print()
 
     def moveAnkle(self,id,position):
+        """
+        Allow movement of a given ankle
+        :param id: ankle joint id
+        :param position: desired angular position 
+        """
         try:
             if id not in [3,7,11,15] :
                 raise JoinNotRecognizedAsHip
