@@ -86,43 +86,17 @@ class OpenDog:
                 if link_pos[2] < 0.0351 and link_pos[2] > 0.0349 : #check if the foot is on the ground
                     coordinates.append(link_pos)
       
-        np_coordinates=np.array(coordinates)
-        xs=np_coordinates[:,0]
-        ys=np_coordinates[:,1]
-        zs=np_coordinates[:,2]
-
-        if len(coordinates)>2 :
-            
-            z=sum(zs)/len(zs)#Zs should be on the same plan
-            center=[z]
-            # https://stackoverflow.com/questions/53502002/how-to-calculate-the-center-of-gravity-with-shapely-in-python
-            # polygon_area_2D=0.5 * (np.dot(xs, np.roll(ys, 1)) - np.dot(ys, np.roll(xs, 1)))
-            # xy=np.array([xs,ys])
-            # c=np.dot(xy + np.roll(xy, 1, axis=1), xs * np.roll(ys, 1) - np.roll(xs, 1) * ys) / (6 * polygon_area_2D)
-            # z=sum(zs)/len(zs)
-            # center=[c[0], c[1], z]
-
-        elif len(coordinates) == 2 :
-            center=[sum(xs)/len(xs), sum(ys)/len(ys), sum(zs)/len(zs)]
-
-        elif len(coordinates) == 1 : 
-            center = coordinates
-
-        else : 
-            center=[]
-        
-        # print(coordinates, center)
-        return coordinates, center
+        return coordinates
     
     def staticStability(self):
         """
         
         """
         com = self.getCOM()
-        polygonCoordinates, polygonCenter = self.getSupportPolygon() 
-        print(com,polygonCenter)
-
-
+        polygonCoordinates = self.getSupportPolygon() 
+            # if in :
+            #     return true
+            # else :
 
     def moveHip(self,id,position):
         """
@@ -249,7 +223,7 @@ for i in range(10000):
     time.sleep(TICK_RATE)
     # if i == 500 :
     #     opendog.moveAnkle(3,0.5)
-    if i == 503 :
-        opendog.staticStability()
+    # if i == 503 :
+    #     opendog.staticStability()
 
 p.disconnect()

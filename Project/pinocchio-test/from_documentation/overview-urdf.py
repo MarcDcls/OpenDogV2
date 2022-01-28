@@ -3,6 +3,7 @@ from sys import argv
 from os.path import dirname, abspath
 
 pinocchio_model_dir = dirname(dirname(str(abspath(__file__))))
+print(pinocchio_model_dir)
 
 urdf_filename = pinocchio_model_dir + '/urdf/robot.urdf' if len(argv)<2 else argv[1]
 

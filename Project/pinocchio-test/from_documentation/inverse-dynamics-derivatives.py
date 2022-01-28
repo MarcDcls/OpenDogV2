@@ -2,6 +2,8 @@
 import pinocchio as pin
 import numpy as np
 
+# a tester dans simulation
+
 ##
 ## In this short script, we show how to compute the derivatives of the
 ## inverse dynamics (RNEA), using the algorithms proposed in:
@@ -25,7 +27,7 @@ a = np.random.rand(model.nv,1) # joint acceleration
 
 # Evaluate the derivatives
 
-print(pin.computeRNEADerivatives(model,data,q,v,a))
+pin.computeRNEADerivatives(model,data,q,v,a)
 
 # Retrieve the derivatives in data
 
