@@ -11,3 +11,4 @@ a = pinocchio.utils.zero(model.nv)
  
 tau = pinocchio.rnea(model,data,q,v,a)
 print('tau = ', tau.T)
+print(q)

@@ -1,10 +1,12 @@
 import time
 
+import math
 import numpy as np
 import pybullet as p
 import pybullet_data
 
 from customExecption import *
+from calculation import *
 
 class OpenDog:
 
@@ -82,10 +84,14 @@ class OpenDog:
         nb_links = p.getNumJoints(self.id)
         for i in range(nb_links):
             link_pos = p.getLinkState(self.id, i)[0]
+
             if i % 4 == 0 and i != 0: # check if link_pos[i] is a foot
-                if link_pos[2] < 0.0351 and link_pos[2] > 0.0349 : #check if the foot is on the ground
+                if link_pos[2] < 0.038 and link_pos[2] > 0.034 : #check if the foot is on the ground
                     coordinates.append(link_pos)
-      
+        
+        if len(coordinates)==4:
+            coordinates=[coordinates[0],coordinates[1],coordinates[-1],coordinates[2]]
+        
         return coordinates
 
     def getLegAngularPositions(self, idLeg):
@@ -132,8 +138,13 @@ class OpenDog:
         except InputNotRecognizedAsJoint :
             print('Joint not identified, movement impossible')
     
+    def moveAllLegs(self, q, force=1000):
+        self.moveLeg(1,q[0],q[1],q[2],force)
+        self.moveLeg(2,q[3],q[4],q[5],force)
+        self.moveLeg(3,q[6],q[7],q[8],force)
+        self.moveLeg(4,q[9],q[10],q[11],force)
 
-    def moveLeg(self, idLeg, angularPositionHip=None, angularPositionKnee=None, angularPositionAnkle=None):
+    def moveLeg(self, idLeg, angularPositionHip=None, angularPositionKnee=None, angularPositionAnkle=None, force=1000):
         """
         Allow leg movement for given angular position 
 
@@ -143,32 +154,30 @@ class OpenDog:
         :param: desired ankle angle position
         """
         try :
-            print("min / max hip :")
-            print("min / max knee :")
-             print("min / max ankle :")
+            # evaluer les sorties du range ?
             angularPositionHip = self.getJointAngularPosition(idLeg,"hip") if (angularPositionHip==None) else angularPositionHip
             angularPositionKnee = self.getJointAngularPosition(idLeg,"knee") if (angularPositionKnee==None) else angularPositionKnee
             angularPositionAnkle = self.getJointAngularPosition(idLeg,"ankle") if (angularPositionAnkle==None) else angularPositionAnkle
 
             if idLeg == "fl" or idLeg == 1 :
-                p.setJointMotorControl2(self.id, 1, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 2, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 3, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 1, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 2, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 3, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL, force=force)
 
             elif idLeg == "fr"  or idLeg == 2 :
-                p.setJointMotorControl2(self.id, 5, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 6, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 7, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 5, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 6, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 7, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL, force=force)
 
             elif idLeg == "bl" or idLeg == 3 :
-                p.setJointMotorControl2(self.id, 9, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 10, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 11, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 9, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 10, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 11, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL, force=force)
 
             elif idLeg == "br" or idLeg == 4 :
-                p.setJointMotorControl2(self.id, 13, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 14, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
-                p.setJointMotorControl2(self.id, 15, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 13, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 14, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL, force=force)
+                p.setJointMotorControl2(self.id, 15, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL, force=force)
                 
             else :
                 raise InputNotRecognizedAsLeg
@@ -176,15 +185,44 @@ class OpenDog:
         except InputNotRecognizedAsLeg : 
             print('Leg not identified, movement impossible')
     
-    def staticStability(self):
+    def COMisIncludedInSupportPolygon(self):
         """
-        
+        Return true is the center of mass is included in the support polygon, else false
+
+        :param: center of mass
+        :return: Boolean
         """
         com = self.getCOM()
         polygonCoordinates = self.getSupportPolygon() 
-            # if in :
-            #     return true
-            # else :
+    
+        included = False
+        n=len(polygonCoordinates)
+        print(n)
+        if n>2 : # a corriger
+            #https://gist.github.com/aidenprice/971e10c13c82dd73c9fc
+            #https://github.com/bubnicbf/Ray-Casting-Algorithm/blob/master/RayCasting.py
+            #using ray casting method
+            x=com[0]
+            y=com[1]
+            for i in range(n-1):
+                x1=polygonCoordinates[i][0]
+                x2=polygonCoordinates[i+1][0]
+                y1=polygonCoordinates[i][1]
+                y2=polygonCoordinates[i+1][1]
+                if y<y1 != y<y2 and x < (x2-x1) * (y-y1) / (y2-y1) +x1 :
+                    included = true
+        elif n==2 :
+            ab=math.sqrt((polygonCoordinates[0][0] - polygonCoordinates[1][0])**2 + (polygonCoordinates[0][1] - polygonCoordinates[1][1])**2)
+            ac=math.sqrt((polygonCoordinates[0][0] - com[0])**2 + (polygonCoordinates[0][1] - com[1])**2)
+            cb=math.sqrt((com[0] - polygonCoordinates[1][0])**2 + (com[1] - polygonCoordinates[1][1])**2)
+            if ac+cb==ab :
+                included = True
+        elif n==1 :
+            if com[:-1] == coordinates[:-1]:
+                included = True
+
+        return included
+
 
 def draw(pt, color=[1, 0, 0], durationTime=0):
     """
@@ -195,8 +233,25 @@ def draw(pt, color=[1, 0, 0], durationTime=0):
     :param durationTime: duree en secondes d'affichage du point
     :return: None
     """
-    end_pt = [pt[0]+0.0025, pt[1], pt[2]]
+    #end_pt = [pt[0]+0.0025, pt[1], pt[2]]
+    end_pt=[pt[0], pt[1], 0.034]
     p.addUserDebugLine(pt, end_pt, lineColorRGB=color, lineWidth=10, lifeTime=durationTime)
+
+
+def drawPolygon(polygon, color=[0, 1, 0], durationTime=0):
+    """
+    Trace un polygone lors de la simulation
+
+    :param pt: coordonnees de tous les points du polygone
+    :param color: couleur du point
+    :param durationTime: duree en secondes d'affichage du point
+    :return: None
+    """
+    for i in range(len(polygon)):
+        if i == (len(polygon)-1) :
+            p.addUserDebugLine(polygon[i],polygon[0],lineColorRGB=color,lineWidth=10, lifeTime=durationTime)
+        else :
+            p.addUserDebugLine(polygon[i],polygon[i+1],lineColorRGB=color,lineWidth=10, lifeTime=durationTime)
 
 
 ################################ SIMULATION ################################
@@ -209,44 +264,48 @@ opendog = OpenDog()
 
 
 
+# p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])#tronc
+# p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 1, 1, 1])#center frame
+# p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])#hip front left
+# p.changeVisualShape(opendog.id, 2, rgbaColor=[1, 0, 0, 1])#upperleg front left
+# p.changeVisualShape(opendog.id, 3, rgbaColor=[1, 0, 0, 1])#lowerleg front left
+# p.changeVisualShape(opendog.id, 4, rgbaColor=[1, 0, 0, 1]) #foot_fl frame
+# p.changeVisualShape(opendog.id, 5, rgbaColor=[0, 1, 0, 1])#mirrorhip back right
+# p.changeVisualShape(opendog.id, 6, rgbaColor=[0, 1, 0, 1])#upperleg front right
+# p.changeVisualShape(opendog.id, 7, rgbaColor=[0, 1, 0, 1])#lowerleg front right
+# p.changeVisualShape(opendog.id, 8, rgbaColor=[0, 1, 0, 1])#foot_fr frame
+# p.changeVisualShape(opendog.id, 9, rgbaColor=[0, 0, 1, 1])#mirrorhip back left
+# p.changeVisualShape(opendog.id, 10, rgbaColor=[0, 0, 1, 1])#upperleg back left 
+# p.changeVisualShape(opendog.id, 11, rgbaColor=[0, 0, 1, 1])#lowerleg back left
+# p.changeVisualShape(opendog.id, 12, rgbaColor=[0, 0, 1, 1])#foot_bl frame
+# p.changeVisualShape(opendog.id, 13, rgbaColor=[1, 1, 0, 1])#hip back right
+# p.changeVisualShape(opendog.id, 14, rgbaColor=[1, 1, 0, 1])#upperleg back right 
+# p.changeVisualShape(opendog.id, 15, rgbaColor=[1, 1, 0, 1])#lowerleg back right
+# p.changeVisualShape(opendog.id, 16, rgbaColor=[1, 1, 0, 1])#foot_br frame
+
+
+
 FRAME_RATE = 1 / 10 # Frequence a laquelle un ordre est transmis au verins
 TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
 
-'''
-p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])#tronc
-p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 1, 1, 1])#center frame
-p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])#hip front left
-p.changeVisualShape(opendog.id, 2, rgbaColor=[1, 0, 0, 1])#upperleg front left
-p.changeVisualShape(opendog.id, 3, rgbaColor=[1, 0, 0, 1])#lowerleg front left
-p.changeVisualShape(opendog.id, 4, rgbaColor=[1, 0, 0, 1]) #foot_fl frame
-p.changeVisualShape(opendog.id, 5, rgbaColor=[0, 1, 0, 1])#mirrorhip back right
-p.changeVisualShape(opendog.id, 6, rgbaColor=[0, 1, 0, 1])#upperleg front right
-p.changeVisualShape(opendog.id, 7, rgbaColor=[0, 1, 0, 1])#lowerleg front right
-p.changeVisualShape(opendog.id, 8, rgbaColor=[0, 1, 0, 1])#foot_fr frame
-p.changeVisualShape(opendog.id, 9, rgbaColor=[0, 0, 1, 1])#mirrorhip back left
-p.changeVisualShape(opendog.id, 10, rgbaColor=[0, 0, 1, 1])#upperleg back left 
-p.changeVisualShape(opendog.id, 11, rgbaColor=[0, 0, 1, 1])#lowerleg back left
-p.changeVisualShape(opendog.id, 12, rgbaColor=[0, 0, 1, 1])#foot_bl frame
-p.changeVisualShape(opendog.id, 13, rgbaColor=[1, 1, 0, 1])#hip back right
-p.changeVisualShape(opendog.id, 14, rgbaColor=[1, 1, 0, 1])#upperleg back right 
-p.changeVisualShape(opendog.id, 15, rgbaColor=[1, 1, 0, 1])#lowerleg back right
-p.changeVisualShape(opendog.id, 16, rgbaColor=[1, 1, 0, 1])#foot_br frame
-'''
+for joint in range(1,15): # motor up the joints
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
 
 for i in range(10000):
     p.stepSimulation()
-
+    
     # for i in range(p.getNumJoints(opendog.id)):
     #     print(i, ":", p.getLinkState(opendog.id, i)[0])
 
     # draw(opendog.getCOM())
-    
     time.sleep(TICK_RATE)
     if i == 495 :
-        print(opendog.getLegAngularPositions("fl"))
-    if i == 500 :
-        opendog.moveLeg("fl",0.5,None,None)
-    if i == 525 :
-        print(opendog.getLegAngularPositions("fl"))
+        opendog.moveLeg("fl",0.5)
+        # print(opendog.getLegAngularPositions("bl"))
+    if i == 895 :
+        draw(opendog.getCOM())
+        drawPolygon(opendog.getSupportPolygon())
+        print(opendog.COMisIncludedInSupportPolygon())
+
 
 p.disconnect()
