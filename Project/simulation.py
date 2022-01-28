@@ -87,6 +87,94 @@ class OpenDog:
                     coordinates.append(link_pos)
       
         return coordinates
+
+    def getLegAngularPositions(self, idLeg):
+        """
+        Return the angular position of a given leg
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        """
+        try :
+            if idLeg == "bl" or idLeg == 3 :
+                return [p.getJointState(self.id,9)[0],p.getJointState(self.id,10)[0],p.getJointState(self.id,11)[0] ]
+            elif idLeg == "br" or idLeg == 4 :
+                return [p.getJointState(self.id,13)[0],p.getJointState(self.id,14)[0],p.getJointState(self.id,15)[0] ]
+            elif idLeg == "fl" or idLeg == 1 :
+                return [p.getJointState(self.id,1)[0],p.getJointState(self.id,2)[0],p.getJointState(self.id,3)[0] ]
+            elif idLeg == "fr"  or idLeg == 2 :
+                return [p.getJointState(self.id,5)[0],p.getJointState(self.id,6)[0],p.getJointState(self.id,7)[0] ]
+            else :
+                raise InputNotRecognizedAsLeg
+        except InputNotRecognizedAsLeg : 
+            print('Leg not identified, movement impossible')
+
+    def getJointAngularPosition(self, idLeg, idJoint):
+        """
+        Return the angular position of a given leg
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        :param: leg identifiant as 'hip', 'knee, 'ankle'
+        """
+        try :
+            if idLeg == "fl"  or idLeg == 1 or idLeg == "fr" or idLeg == 2 or idLeg == "bl" or idLeg == 3 or idLeg == "br" or idLeg == 4  :
+                if idJoint=="hip":
+                    return self.getLegAngularPositions(idLeg)[0]
+                elif idJoint=="knee":
+                    return self.getLegAngularPositions(idLeg)[1]
+                elif idJoint=="ankle":
+                    return self.getLegAngularPositions(idLeg)[2]
+                else :
+                    raise InputNotRecognizedAsJoint
+            else :
+                raise InputNotRecognizedAsLeg
+        except InputNotRecognizedAsLeg : 
+            print('Leg not identified, movement impossible')
+        except InputNotRecognizedAsJoint :
+            print('Joint not identified, movement impossible')
+    
+
+    def moveLeg(self, idLeg, angularPositionHip=None, angularPositionKnee=None, angularPositionAnkle=None):
+        """
+        Allow leg movement for given angular position 
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        :param: desired hip angle position, None for no change
+        :param: desired knee angle position , None for no change
+        :param: desired ankle angle position
+        """
+        try :
+            print("min / max hip :")
+            print("min / max knee :")
+             print("min / max ankle :")
+            angularPositionHip = self.getJointAngularPosition(idLeg,"hip") if (angularPositionHip==None) else angularPositionHip
+            angularPositionKnee = self.getJointAngularPosition(idLeg,"knee") if (angularPositionKnee==None) else angularPositionKnee
+            angularPositionAnkle = self.getJointAngularPosition(idLeg,"ankle") if (angularPositionAnkle==None) else angularPositionAnkle
+
+            if idLeg == "fl" or idLeg == 1 :
+                p.setJointMotorControl2(self.id, 1, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 2, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 3, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+
+            elif idLeg == "fr"  or idLeg == 2 :
+                p.setJointMotorControl2(self.id, 5, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 6, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 7, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+
+            elif idLeg == "bl" or idLeg == 3 :
+                p.setJointMotorControl2(self.id, 9, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 10, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 11, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+
+            elif idLeg == "br" or idLeg == 4 :
+                p.setJointMotorControl2(self.id, 13, targetPosition=angularPositionHip, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 14, targetPosition=angularPositionKnee, controlMode=p.POSITION_CONTROL)
+                p.setJointMotorControl2(self.id, 15, targetPosition=angularPositionAnkle, controlMode=p.POSITION_CONTROL)
+                
+            else :
+                raise InputNotRecognizedAsLeg
+
+        except InputNotRecognizedAsLeg : 
+            print('Leg not identified, movement impossible')
     
     def staticStability(self):
         """
@@ -97,74 +185,6 @@ class OpenDog:
             # if in :
             #     return true
             # else :
-
-    def moveHip(self,id,position):
-        """
-        Allow movement of a given hip
-
-        :param id: hip joint id
-        :param position: desired angular position 
-        """
-        try:
-            if id not in [1, 5, 9, 13] :
-                raise JoinNotRecognizedAsHip
-            else :
-                if position < -0.524 or position > 1.396 :
-                    raise OutOfRange
-                else :
-                    #something with with pybullet
-                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
-        except JoinNotRecognizedAsHip:
-            print("Movement impossibe : you are not calling a hip, change your value")
-            print()
-        except OutOfRange: 
-            print('Movement impossible : position input is out of range')
-            print()
-
-    def moveKnee(self,id,position):
-        """
-        Allow movement of a given knee
-
-        :param id: knee joint id
-        :param position: desired angular position 
-        """
-        try:
-            if id not in [2, 6, 10, 14] :
-                raise JoinNotRecognizedAsKnee
-            else :
-                if position < -0.873 or position > 0.698 :
-                    raise OutOfRange
-                else :
-                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
-        except JoinNotRecognizedAsKnee:
-            print("Movement impossibe : you are not calling a knee, change your value")
-            print()
-        except OutOfRange: 
-            print('Movement impossible : position input is out of range')
-            print()
-
-    def moveAnkle(self,id,position):
-        """
-        Allow movement of a given ankle
-
-        :param id: ankle joint id
-        :param position: desired angular position 
-        """
-        try:
-            if id not in [3, 7, 11, 15] :
-                raise JoinNotRecognizedAsAnkle
-            else :
-                if position < -2.356 or position > 2.356 :
-                    raise OutOfRange
-                else :
-                    #something with with pybullet
-                    p.setJointMotorControl2(self.id, id, targetPosition=position, controlMode=p.POSITION_CONTROL)
-        except JoinNotRecognizedAsAnkle:
-            print("Movement impossibe : you are not calling an ankle, change your value")
-            print()
-        except OutOfRange: 
-            print('Movement impossible : position input is out of range')
-            print()
 
 def draw(pt, color=[1, 0, 0], durationTime=0):
     """
@@ -192,6 +212,7 @@ opendog = OpenDog()
 FRAME_RATE = 1 / 10 # Frequence a laquelle un ordre est transmis au verins
 TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
 
+'''
 p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])#tronc
 p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 1, 1, 1])#center frame
 p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])#hip front left
@@ -210,7 +231,7 @@ p.changeVisualShape(opendog.id, 13, rgbaColor=[1, 1, 0, 1])#hip back right
 p.changeVisualShape(opendog.id, 14, rgbaColor=[1, 1, 0, 1])#upperleg back right 
 p.changeVisualShape(opendog.id, 15, rgbaColor=[1, 1, 0, 1])#lowerleg back right
 p.changeVisualShape(opendog.id, 16, rgbaColor=[1, 1, 0, 1])#foot_br frame
-
+'''
 
 for i in range(10000):
     p.stepSimulation()
@@ -221,9 +242,11 @@ for i in range(10000):
     # draw(opendog.getCOM())
     
     time.sleep(TICK_RATE)
-    # if i == 500 :
-    #     opendog.moveAnkle(3,0.5)
-    # if i == 503 :
-    #     opendog.staticStability()
+    if i == 495 :
+        print(opendog.getLegAngularPositions("fl"))
+    if i == 500 :
+        opendog.moveLeg("fl",0.5,None,None)
+    if i == 525 :
+        print(opendog.getLegAngularPositions("fl"))
 
 p.disconnect()

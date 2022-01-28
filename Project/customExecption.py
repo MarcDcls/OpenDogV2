@@ -21,3 +21,15 @@ class OutOfRange(Exception):
     Raised when the input position is not in range
     """
     pass
+
+class InputNotRecognizedAsLeg(Exception): 
+    """
+    Raised when the input is not a leg
+    """
+    pass
+
+class InputNotRecognizedAsJoint(Exception): 
+    """
+    Raised when the input is not a joint
+    """
+    pass
