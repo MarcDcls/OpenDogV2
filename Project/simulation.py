@@ -7,6 +7,7 @@ import pybullet_data
 
 from customExecption import *
 from calculation import *
+from ray_casting_algorithm import *
 
 class OpenDog:
 
@@ -53,6 +54,19 @@ class OpenDog:
     #                             controlMode=p.POSITION_CONTROL, force=force)
     #     p.setJointMotorControl2(self.id, self.joint_name_to_id['3v3'], targetPosition=0.4455 - V[11] * 0.001,
     #                             controlMode=p.POSITION_CONTROL, force=force)
+
+    # def isOverTurn(self) :
+    #     '''
+    #     Check if the robot is overturned
+
+    #     :return: Boolean, robot state
+    #     '''
+    #     overturned = False
+    #     for i in [[1,4],[5,8],[9,12], [13,16]]:
+    #         if p.getLinkState(self.id,i[1])[0][2]>p.getLinkState(self.id,i[0])[0][2]:
+    #             print(p.getLinkState(self.id,i[1])[0][2],p.getLinkState(self.id,i[0])[0][2])
+    #             overturned=True
+    #     return overturned
 
     def getCOM(self):
         """
@@ -185,7 +199,7 @@ class OpenDog:
         except InputNotRecognizedAsLeg : 
             print('Leg not identified, movement impossible')
     
-    def COMisIncludedInSupportPolygon(self):
+    def staticStability(self):
         """
         Return true is the center of mass is included in the support polygon, else false
 
@@ -194,23 +208,12 @@ class OpenDog:
         """
         com = self.getCOM()
         polygonCoordinates = self.getSupportPolygon() 
-    
         included = False
+
         n=len(polygonCoordinates)
-        print(n)
-        if n>2 : # a corriger
-            #https://gist.github.com/aidenprice/971e10c13c82dd73c9fc
-            #https://github.com/bubnicbf/Ray-Casting-Algorithm/blob/master/RayCasting.py
-            #using ray casting method
-            x=com[0]
-            y=com[1]
-            for i in range(n-1):
-                x1=polygonCoordinates[i][0]
-                x2=polygonCoordinates[i+1][0]
-                y1=polygonCoordinates[i][1]
-                y2=polygonCoordinates[i+1][1]
-                if y<y1 != y<y2 and x < (x2-x1) * (y-y1) / (y2-y1) +x1 :
-                    included = true
+        if n>2 :
+            #using ray casting algo
+            included = ispointinside(com[:-1],polygonCoordinates)
         elif n==2 :
             ab=math.sqrt((polygonCoordinates[0][0] - polygonCoordinates[1][0])**2 + (polygonCoordinates[0][1] - polygonCoordinates[1][1])**2)
             ac=math.sqrt((polygonCoordinates[0][0] - com[0])**2 + (polygonCoordinates[0][1] - com[1])**2)
@@ -233,8 +236,19 @@ def draw(pt, color=[1, 0, 0], durationTime=0):
     :param durationTime: duree en secondes d'affichage du point
     :return: None
     """
-    #end_pt = [pt[0]+0.0025, pt[1], pt[2]]
-    end_pt=[pt[0], pt[1], 0.034]
+    end_pt = [pt[0]+0.0025, pt[1], pt[2]]
+    p.addUserDebugLine(pt, end_pt, lineColorRGB=color, lineWidth=10, lifeTime=durationTime)
+
+def drawHorizontalVector(pt, color=[0, 0, 1], durationTime=0):
+    """
+    Trace le vecteur horizontal lors de la simulation
+
+    :param pt: coordonnees du point
+    :param color: couleur du point
+    :param durationTime: duree en secondes d'affichage du point
+    :return: None
+    """
+    end_pt = [pt[0], pt[1], 0.0]
     p.addUserDebugLine(pt, end_pt, lineColorRGB=color, lineWidth=10, lifeTime=durationTime)
 
 
@@ -299,13 +313,13 @@ for i in range(10000):
 
     # draw(opendog.getCOM())
     time.sleep(TICK_RATE)
-    if i == 495 :
-        opendog.moveLeg("fl",0.5)
+    # if i == 495 :
+    #     opendog.moveLeg("fl",0.5)
         # print(opendog.getLegAngularPositions("bl"))
     if i == 895 :
-        draw(opendog.getCOM())
+        drawHorizontalVector(opendog.getCOM())
         drawPolygon(opendog.getSupportPolygon())
-        print(opendog.COMisIncludedInSupportPolygon())
-
+    if i == 9999:
+        print(opendog.isOverTurn())
 
 p.disconnect()
