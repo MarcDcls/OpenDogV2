@@ -10,7 +10,7 @@ from numpy.linalg import norm, solve
 import pinocchio
 from pinocchio.visualize import MeshcatVisualizer
 
-model, collision_model, visual_model = pinocchio.buildSampleModelManipulator()
+model = pinocchio.buildSampleModelManipulator()
 data  = model.createData()
 
 JOINT_ID = 6
@@ -21,26 +21,6 @@ eps    = 1e-4
 IT_MAX = 1000
 DT     = 1e-1
 damp   = 1e-12
-
-
-
-viz = MeshcatVisualizer(model, collision_model, visual_model)
-
-# Start a new MeshCat server and client.
-# Note: the server can also be started separately using the "meshcat-server" command in a terminal:
-# this enables the server to remain active after the current script ends.
-#
-# Option open=True pens the visualizer.
-# Note: the visualizer can also be opened seperately by visiting the provided URL.
-try:
-    viz.initViewer(open=True)
-except ImportError as err:
-    print("Error while initializing the viewer. It seems you should install Python meshcat")
-    print(err)
-    sys.exit(0)
-
-# Load the robot in the viewer.
-viz.loadViewerModel()
 
 
 i=0

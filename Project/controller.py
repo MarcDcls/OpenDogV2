@@ -9,6 +9,8 @@ def loadURDF():
 
     return pin.buildModelsFromUrdf(urdf_model_path, mesh_dir)
 
+
+
 # if __name__ == '__main__':
 #     model, collision_model, visual_model = loadURDF()
 #     print(pin.neutral(model))

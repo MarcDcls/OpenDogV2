@@ -4,8 +4,9 @@ from os.path import dirname, join, abspath
 
 
 # This path refers to Pinocchio source code but you can define your own directory here.
-pinocchio_model_dir = join(dirname(dirname(str(abspath(__file__)))), "urdf")
-#print(pinocchio_model_dir)
+#pinocchio_model_dir = join(dirname(dirname(str(abspath(__file__)))), "urdf")
+pinocchio_model_dir = "home/ajonc/OpenDogV2/Project/urdf"
+print(pinocchio_model_dir)
 #model_path = join(pinocchio_model_dir,"example-robot-data/robots") if len(argv)<2 else argv[1]
 mesh_dir = pinocchio_model_dir
 urdf_model_path = join(pinocchio_model_dir,"robot.urdf")
