@@ -80,22 +80,44 @@ opendog = OpenDog()
 FRAME_RATE = 1 / 10 # Frequence a laquelle un ordre est transmis au verins
 TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
 
-for joint in range(1,15): # motor up the joints
+# for joint in range(1,15): # motor up the joints
+#     p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
+
+for joint in [1,9]:
     p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
+for joint in [5,13]:
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-0.01, force=1000, maxVelocity=3)
+
+
+for joint in [2,10]:
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.32, force=1000, maxVelocity=3)
+for joint in [6,14]:
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-0.32, force=1000, maxVelocity=3)
+
+
+for joint in [3,11]:
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=1.6, force=1000, maxVelocity=3)
+for joint in [7,15]:
+    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-1.6, force=1000, maxVelocity=3)
+
+
 
 for i in range(10000):
     p.stepSimulation()
-    
+
     # for i in range(p.getNumJoints(opendog.id)):
     #     print(i, ":", p.getLinkState(opendog.id, i)[0])
 
     # draw(opendog.getCOM())
     time.sleep(TICK_RATE)
+
     if i == 495 :
-        opendog.moveLeg("fl",0.5)
-        # print(opendog.getLegAngularPositions("bl"))
-    if i == 895 :
-        drawHorizontalVector(opendog.getCOM())
-        drawPolygon(opendog.getSupportPolygon())
+        opendog.upDown()
+
+    #     opendog.moveLeg("fl",0.5)
+    #     # print(opendog.getLegAngularPositions("bl"))
+    # if i == 895 :
+    #     drawHorizontalVector(opendog.getCOM())
+    #     drawPolygon(opendog.getSupportPolygon())
 
 p.disconnect()

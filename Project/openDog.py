@@ -1,5 +1,6 @@
-import pybullet as p
+import numpy as np
 import pinocchio as pin
+import pybullet as p
 
 from customExecption import *
 from ray_casting_algorithm import *
@@ -111,18 +112,33 @@ class OpenDog:
         """
         try :
             if idLeg == "bl" or idLeg == 3 :
-                return p.getJointState(self.id,12)[0]
+                return p.getLinkState(self.id,12)[0]
             elif idLeg == "br" or idLeg == 4 :
-                return p.getJointState(self.id,16)[0]
+                return p.getLinkState(self.id,16)[0]
             elif idLeg == "fl" or idLeg == 1 :
-                return p.getJointState(self.id,4)[0]
+                return p.getLinkState(self.id,4)[0]
             elif idLeg == "fr"  or idLeg == 2 :
-                return p.getJointState(self.id,8)[0]
+                return p.getLinkState(self.id,8)[0]
             else :
                 raise InputNotRecognizedAsLeg
         except InputNotRecognizedAsLeg : 
             print('Leg not identified, movement impossible')
 
+    def getAngularPositions(self):
+        pos=[]
+        for i in range(1,5): 
+            pos.append(self.getLegAngularPositions(i))
+        return pos
+
+    def getAngularPosition(self, idJoint):
+        """
+        Return the angular position of a given joint
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        """
+        return p.getJointState(self.id,idJoint)[0]
+            
+       
     def getLegAngularPositions(self, idLeg):
         """
         Return the angular position of a given leg
@@ -241,15 +257,38 @@ class OpenDog:
 
         return included
 
-    def walk(self,q,qdot,dt):
-        distance=qdot/dt
-        footCartesianPosition = []
-        for i in ["fl","fr","bl","br"] :
-           footCartesianPosition.append(self.getFootCartesianPosition(i))
-        
-        target = distance + footCartesianPosition
-        
-        q_calculated=[]
+    def upDown(self) :
+        # startCartesian = []
+        # for i in [0, 4, 8, 12, 16] :
+        #     start.append(p.getLinkState(self.id, i )[0]) #15 elements cartesian position coordinates
+        #     #start.append(p.getLinkState(self.id, i )[:2]) #30 elements : Position and orientation coordinates
+        # endCartesian = [(-0.0009681776154899574, -0.1863667810138693, 0.2772442137139605), (0.12631336414482058, -0.32226070849012967, 0.034987520166433785), (-0.12258038547910183, -0.32259710015908366, 0.03498074122180714), (0.1251627584585554, 0.20650367062839914, 0.035008904244189856), (-0.12380548390696183, 0.20653123302883897, 0.03496180852681088)]
+        # traj=np.linspace(startCartesian,endCartesian)
 
+        startAngular = []
+        joints= [1,2,3,5,6,7,9,10,11,13,14,15]
+        for i in joints :
+            startAngular.append(p.getJointState(self.id, i )[0]) #12 elements angular position coordinates
+        endAngular=[0.00970961987022902, 0.31879741163974945, 1.6077100269854723, -0.01037295750250239, -0.3186369407986981, -1.607967327564964, 0.00995730241551139, 0.31973095233731724, 1.600450121688511, -0.010053865290454196, -0.3197051863667914, -1.6006618862716262]
+        traj=np.linspace(startAngular,endAngular)
+        
+        # for k in range(len(traj)):
+        #     for j in range(len(joints)):
+        #        p.setJointMotorControl2(self.id,joints[j],p.POSITION_CONTROL, targetPosition=traj[k][j], force=1000,maxVelocity=1.5)
+        
+        traj=np.linspace(endAngular,startAngular)
+        for k in range(len(traj)):
+            for j in range(len(joints)):
+               p.setJointMotorControl2(self.id,joints[j],p.POSITION_CONTROL, targetPosition=traj[k][j], force=1000,maxVelocity=1.5)
+        
 
-        return q_calculated
+        # h = len(traj)-2
+        # g = len(joints)-1
+        # while h > -1 :
+        #     print(h)
+        #     while g > -1 :
+        #         print(traj[h][g])
+        #         p.setJointMotorControl2(self.id,joints[g],p.POSITION_CONTROL, targetPosition=traj[h][g], force=1000,maxVelocity=0.5)
+        #         g-=1
+        #     h-=1
+        #     g=len(joints)-1

@@ -10,12 +10,12 @@ from pinocchio.visualize import MeshcatVisualizer
 
 model = pinocchio.buildSampleModelManipulator()
 data  = model.createData()
+print("model :", model)
+print ("data :", data.model)
 
 JOINT_ID = 6
 oMdes = pinocchio.SE3(np.eye(3), np.array([1., 0., 1.]))
 print(oMdes)
-print(model)
-print(data)
 
 q      = pinocchio.neutral(model)
 eps    = 1e-4
