@@ -6,18 +6,17 @@ import numpy as np
 from numpy.linalg import norm, solve
 
 import pinocchio
-from pinocchio.visualize import MeshcatVisualizer
 
 model = pinocchio.buildSampleModelManipulator()
 data  = model.createData()
-print("model :", model)
-print ("data :", data.model)
+
 
 JOINT_ID = 6
 oMdes = pinocchio.SE3(np.eye(3), np.array([1., 0., 1.]))
 print(oMdes)
 
 q      = pinocchio.neutral(model)
+print(q)
 eps    = 1e-4
 IT_MAX = 1000
 DT     = 1e-1

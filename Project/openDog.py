@@ -1,6 +1,10 @@
 import numpy as np
+import operator
 import pinocchio as pin
 import pybullet as p
+import time
+
+from os.path import dirname, join, abspath
 
 from customExecption import *
 from ray_casting_algorithm import *
@@ -12,8 +16,12 @@ class OpenDog:
     ):
 
         self.id = p.loadURDF("urdf/robot.urdf", [0, 0, 0.6], p.getQuaternionFromEuler([0, 0, 0]))
-        self.legs = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]]
         self._buildJointNameToIdDict()
+        self.model, self.collision_model, self.visual_model  = self._generatePinocchioModels()
+        self.data, self.collision_data, self.visual_data = pin.createDatas(self.model, self.collision_model, self.visual_model)
+        self.motors = _motorsInitialization()
+        self.frames=[0,4,8,12,16]
+        self.joints=[1,2,3,5,6,7,9,10,11,13,14,15]
 
     def _buildJointNameToIdDict(self):
         num_joints = p.getNumJoints(self.id)
@@ -21,6 +29,18 @@ class OpenDog:
         for i in range(num_joints):
             joint_info = p.getJointInfo(self.id, i)
             self.joint_name_to_id[joint_info[1].decode("UTF-8")] = joint_info[0]
+    
+    def _generatePinocchioModels(self):
+        pinocchio_model_dir = join(dirname(dirname(str(abspath(__file__)))), "Project/urdf")
+        mesh_dir = pinocchio_model_dir
+        urdf_model_path = join(pinocchio_model_dir,"robot.urdf")
+
+        return pin.buildModelsFromUrdf(urdf_model_path,mesh_dir)
+
+    def _motorsInitialization(self):
+        for joint in self.joints :
+            p.setJointMotorControl2(self.id, joint, p.POSITION_CONTROL, targetPosition=0, force=1000, maxVelocity=3)
+        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     # def moveCylinders(self, V, force):
     #     for i in range(12):
@@ -51,6 +71,7 @@ class OpenDog:
     #     p.setJointMotorControl2(self.id, self.joint_name_to_id['3v3'], targetPosition=0.4455 - V[11] * 0.001,
     #                             controlMode=p.POSITION_CONTROL, force=force)
 
+
     # def isOverTurn(self) :
     #     '''
     #     Check if the robot is overturned
@@ -63,6 +84,20 @@ class OpenDog:
     #             print(p.getLinkState(self.id,i[1])[0][2],p.getLinkState(self.id,i[0])[0][2])
     #             overturned=True
     #     return overturned
+
+
+    # def motorUpInitialize(self):
+        # for joint in [5,6,7,13,14,15] :
+            # p.setJointMotorControl2(self.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
+
+        # for joint in [1,2,3,9,10,11]: 
+        #     p.setJointMotorControl2(self.id, joint, p.POSITION_CONTROL, targetPosition=-0.01, force=1000, maxVelocity=3)
+
+    def updateMotors(self):
+        m = []            
+        for j in self.joints:
+            m.append(getJointState(self.id, j)[0]
+        self.motors = m
 
     def getCOM(self):
         """
@@ -124,7 +159,7 @@ class OpenDog:
         except InputNotRecognizedAsLeg : 
             print('Leg not identified, movement impossible')
 
-    def getAngularPositions(self):
+    def getAngularPositionAllLegs(self):
         pos=[]
         for i in range(1,5): 
             pos.append(self.getLegAngularPositions(i))
@@ -134,55 +169,11 @@ class OpenDog:
         """
         Return the angular position of a given joint
 
-        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        :param: joint id
+        :return: angular position in radians
         """
         return p.getJointState(self.id,idJoint)[0]
             
-       
-    def getLegAngularPositions(self, idLeg):
-        """
-        Return the angular position of a given leg
-
-        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
-        """
-        try :
-            if idLeg == "bl" or idLeg == 3 :
-                return [p.getJointState(self.id,9)[0],p.getJointState(self.id,10)[0],p.getJointState(self.id,11)[0] ]
-            elif idLeg == "br" or idLeg == 4 :
-                return [p.getJointState(self.id,13)[0],p.getJointState(self.id,14)[0],p.getJointState(self.id,15)[0] ]
-            elif idLeg == "fl" or idLeg == 1 :
-                return [p.getJointState(self.id,1)[0],p.getJointState(self.id,2)[0],p.getJointState(self.id,3)[0] ]
-            elif idLeg == "fr"  or idLeg == 2 :
-                return [p.getJointState(self.id,5)[0],p.getJointState(self.id,6)[0],p.getJointState(self.id,7)[0] ]
-            else :
-                raise InputNotRecognizedAsLeg
-        except InputNotRecognizedAsLeg : 
-            print('Leg not identified, movement impossible')
-
-    def getJointAngularPosition(self, idLeg, idJoint):
-        """
-        Return the angular position of a given leg
-
-        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
-        :param: leg identifiant as 'hip', 'knee, 'ankle'
-        """
-        try :
-            if idLeg == "fl"  or idLeg == 1 or idLeg == "fr" or idLeg == 2 or idLeg == "bl" or idLeg == 3 or idLeg == "br" or idLeg == 4  :
-                if idJoint=="hip":
-                    return self.getLegAngularPositions(idLeg)[0]
-                elif idJoint=="knee":
-                    return self.getLegAngularPositions(idLeg)[1]
-                elif idJoint=="ankle":
-                    return self.getLegAngularPositions(idLeg)[2]
-                else :
-                    raise InputNotRecognizedAsJoint
-            else :
-                raise InputNotRecognizedAsLeg
-        except InputNotRecognizedAsLeg : 
-            print('Leg not identified, movement impossible')
-        except InputNotRecognizedAsJoint :
-            print('Joint not identified, movement impossible')
-    
     def moveAllLegs(self, q, force=1000):
         self.moveLeg(1,q[0],q[1],q[2],force)
         self.moveLeg(2,q[3],q[4],q[5],force)
@@ -257,38 +248,86 @@ class OpenDog:
 
         return included
 
-    def upDown(self) :
-        # startCartesian = []
-        # for i in [0, 4, 8, 12, 16] :
-        #     start.append(p.getLinkState(self.id, i )[0]) #15 elements cartesian position coordinates
-        #     #start.append(p.getLinkState(self.id, i )[:2]) #30 elements : Position and orientation coordinates
-        # endCartesian = [(-0.0009681776154899574, -0.1863667810138693, 0.2772442137139605), (0.12631336414482058, -0.32226070849012967, 0.034987520166433785), (-0.12258038547910183, -0.32259710015908366, 0.03498074122180714), (0.1251627584585554, 0.20650367062839914, 0.035008904244189856), (-0.12380548390696183, 0.20653123302883897, 0.03496180852681088)]
-        # traj=np.linspace(startCartesian,endCartesian)
 
-        startAngular = []
-        joints= [1,2,3,5,6,7,9,10,11,13,14,15]
-        for i in joints :
-            startAngular.append(p.getJointState(self.id, i )[0]) #12 elements angular position coordinates
-        endAngular=[0.00970961987022902, 0.31879741163974945, 1.6077100269854723, -0.01037295750250239, -0.3186369407986981, -1.607967327564964, 0.00995730241551139, 0.31973095233731724, 1.600450121688511, -0.010053865290454196, -0.3197051863667914, -1.6006618862716262]
-        traj=np.linspace(startAngular,endAngular)
-        
-        # for k in range(len(traj)):
-        #     for j in range(len(joints)):
-        #        p.setJointMotorControl2(self.id,joints[j],p.POSITION_CONTROL, targetPosition=traj[k][j], force=1000,maxVelocity=1.5)
-        
-        traj=np.linspace(endAngular,startAngular)
-        for k in range(len(traj)):
-            for j in range(len(joints)):
-               p.setJointMotorControl2(self.id,joints[j],p.POSITION_CONTROL, targetPosition=traj[k][j], force=1000,maxVelocity=1.5)
-        
+    def move(self, framerate):
+        """
+        Return a list of angular positions in order to generate a movement
 
-        # h = len(traj)-2
-        # g = len(joints)-1
-        # while h > -1 :
-        #     print(h)
-        #     while g > -1 :
-        #         print(traj[h][g])
-        #         p.setJointMotorControl2(self.id,joints[g],p.POSITION_CONTROL, targetPosition=traj[h][g], force=1000,maxVelocity=0.5)
-        #         g-=1
-        #     h-=1
-        #     g=len(joints)-1
+        :return: list of angular positions
+        """
+        #set initial joint configuration 
+        legsPinocchioTree=["bl","br","fl","fr"]
+        q=[]
+        for i in legsPinocchioTree:
+            q.extend(self.getLegAngularPositions(i))
+        q=np.array(q)
+
+        #set trajectory
+        traj=self.set_trajectory(q) #40 * 30
+
+        #initialization of list of motor configuration : list of np.array ?
+        res=[q]
+        
+        
+        for i in range(len(traj)):
+            pin.forwardKinematics(self.model, self.data,res[-1])
+            pin.updateFramePlacements(self.model, self.data) 
+
+            X0 = []            
+            for j in self.frames:
+                #mauvaise méthode ? mis à jour dans pinocchio mais pas dans pybullet
+                #X0.extend(p.getLinkState(self.id,j)[0])
+                X0.extend(p.getLinkState(self.id,j)[:2][0])
+                X0.extend(p.getLinkState(self.id,j)[:2][1][:-1])
+                print("X0",X0,"data.oMi",self.data.oMi[j])
+            dX=np.subtract(traj[j],X0)
+
+            
+            J=[] # J = [ [J0], [J4], [J8], [J12], [J16]]
+            dq=[] # dq = [ [dq0], [dq4], [dq8], [dq12], [dq16]]
+            q=[] # q = [ q0, q4, q8, q12, q16]
+            i=0
+            for k in self.frames:
+                J_tmp=pin.computeJointJacobian(self.model, self.data, res[-1], k)
+                J.append(J_tmp)
+                dq_tmp = J_tmp.T @ dX[6*i:6*(i+1)]
+                dq.append(dq_tmp)
+                i+=1
+                new_q_frame = res[-1] + dq
+                q.extend(new_q_frame)
+
+            res.append(q)
+        
+        return res
+
+
+
+
+
+
+    def getLegAngularPositions(self, idLeg):
+        """
+        Return the angular position of a given leg
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        """
+        try :
+            if idLeg == "fl" or idLeg == "fr" or idLeg == "bl" or idLeg == "br" : 
+            return [getJointAngularPosition('hip_' + idLeg),
+                    getJointAngularPosition('knee_' + idLeg),
+                    getJointAngularPosition('ankle_' + idLeg)]
+            else :
+                raise InputNotRecognizedAsLeg
+
+        except InputNotRecognizedAsLeg : 
+            print('Leg not identified, movement impossible')
+
+    def getJointAngularPosition(self, jointName):
+        """
+        Return the angular position of a given leg
+
+        :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
+        :param: leg identifiant as 'hip', 'knee, 'ankle'
+        """
+        return p.getJointState(self.id, self.joint_name_to_id(jointName))[0]
+    

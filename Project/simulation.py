@@ -6,6 +6,7 @@ import pybullet as p
 import pybullet_data
 
 from openDog import OpenDog
+from trajectory import trajectoryUpAndDown
 
 def draw(pt, color=[1, 0, 0], durationTime=0):
     """
@@ -50,74 +51,56 @@ def drawPolygon(polygon, color=[0, 1, 0], durationTime=0):
 
 ################################ SIMULATION ################################
 
+# FRAME_RATE = 1 / 240 # Frequence a laquelle un ordre est transmis au verins
+TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
+
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 planeId = p.loadURDF("plane.urdf")
 p.setGravity(0, 0, -10)
+
 opendog = OpenDog()
+traj = trajectoryUpAndDown(opendog.motors)
 
-# p.changeVisualShape(opendog.id, -1, rgbaColor=[1, 1, 1, 1])#tronc
-# p.changeVisualShape(opendog.id, 0, rgbaColor=[1, 1, 1, 1])#center frame
-# p.changeVisualShape(opendog.id, 1, rgbaColor=[1, 0, 0, 1])#hip front left
-# p.changeVisualShape(opendog.id, 2, rgbaColor=[1, 0, 0, 1])#upperleg front left
-# p.changeVisualShape(opendog.id, 3, rgbaColor=[1, 0, 0, 1])#lowerleg front left
-# p.changeVisualShape(opendog.id, 4, rgbaColor=[1, 0, 0, 1]) #foot_fl frame
-# p.changeVisualShape(opendog.id, 5, rgbaColor=[0, 1, 0, 1])#mirrorhip back right
-# p.changeVisualShape(opendog.id, 6, rgbaColor=[0, 1, 0, 1])#upperleg front right
-# p.changeVisualShape(opendog.id, 7, rgbaColor=[0, 1, 0, 1])#lowerleg front right
-# p.changeVisualShape(opendog.id, 8, rgbaColor=[0, 1, 0, 1])#foot_fr frame
-# p.changeVisualShape(opendog.id, 9, rgbaColor=[0, 0, 1, 1])#mirrorhip back left
-# p.changeVisualShape(opendog.id, 10, rgbaColor=[0, 0, 1, 1])#upperleg back left 
-# p.changeVisualShape(opendog.id, 11, rgbaColor=[0, 0, 1, 1])#lowerleg back left
-# p.changeVisualShape(opendog.id, 12, rgbaColor=[0, 0, 1, 1])#foot_bl frame
-# p.changeVisualShape(opendog.id, 13, rgbaColor=[1, 1, 0, 1])#hip back right
-# p.changeVisualShape(opendog.id, 14, rgbaColor=[1, 1, 0, 1])#upperleg back right 
-# p.changeVisualShape(opendog.id, 15, rgbaColor=[1, 1, 0, 1])#lowerleg back right
-# p.changeVisualShape(opendog.id, 16, rgbaColor=[1, 1, 0, 1])#foot_br frame
-
-
-
-FRAME_RATE = 1 / 10 # Frequence a laquelle un ordre est transmis au verins
-TICK_RATE = 1 / 240 # Frequence a laquelle le simulateur s'actualise
-
-# for joint in range(1,15): # motor up the joints
-#     p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
-
-for joint in [1,9]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.01, force=1000, maxVelocity=3)
-for joint in [5,13]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-0.01, force=1000, maxVelocity=3)
-
-
-for joint in [2,10]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=0.32, force=1000, maxVelocity=3)
-for joint in [6,14]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-0.32, force=1000, maxVelocity=3)
-
-
-for joint in [3,11]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=1.6, force=1000, maxVelocity=3)
-for joint in [7,15]:
-    p.setJointMotorControl2(opendog.id, joint, p.POSITION_CONTROL, targetPosition=-1.6, force=1000, maxVelocity=3)
-
-
-
-for i in range(10000):
-    p.stepSimulation()
-
-    # for i in range(p.getNumJoints(opendog.id)):
-    #     print(i, ":", p.getLinkState(opendog.id, i)[0])
-
-    # draw(opendog.getCOM())
+# Initialization time
+for i in range(3 * TICK_RATE):
+    p.stepSimulation()  
     time.sleep(TICK_RATE)
 
-    if i == 495 :
-        opendog.upDown()
+# Simulation loop
+for i in range(10000):
+    p.stepSimulation()        
 
-    #     opendog.moveLeg("fl",0.5)
-    #     # print(opendog.getLegAngularPositions("bl"))
-    # if i == 895 :
-    #     drawHorizontalVector(opendog.getCOM())
-    #     drawPolygon(opendog.getSupportPolygon())
+    for j in range(len(traj)):
+        opendog.updateMotors()
+        pin.forwardKinematics(opendog.model, opendog.data, opendog.motors)
+        pin.updateFramePlacements(opendog.model, opendog.data) 
+
+        X0 = []            
+        for k in self.frames: # Marche mais récupère les données dans pybullet au lieu du modèle de pinocchio
+            X0.extend(p.getLinkState(opendog.id, k)[:2][0])
+            X0.extend(p.getLinkState(opendog.id, k)[:2][1][:-1])
+        dX = np.subtract(traj[j], X0)
+
+        
+        J = pin.computeJointJacobian(opendog.model, opendog.data)
+        dq = J.T @ dX
+        q = opendog.motors + dq
+
+        # J=[] # J = [ [J0], [J4], [J8], [J12], [J16]]
+        # dq=[] # dq = [ [dq0], [dq4], [dq8], [dq12], [dq16]]
+        # q=[] # q = [ q0, q4, q8, q12, q16]
+        # i=0
+        # for k in self.frames:
+        #     J_tmp=pin.computeJointJacobian(self.model, self.data, res[-1], k)
+        #     J.append(J_tmp)
+        #     dq_tmp = J_tmp.T @ dX[6*i:6*(i+1)]
+        #     dq.append(dq_tmp)
+        #     i+=1
+        #     new_q_frame = res[-1] + dq
+        #     q.extend(new_q_frame)
+
+    
+    time.sleep(TICK_RATE)
 
 p.disconnect()
