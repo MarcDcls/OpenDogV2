@@ -2,6 +2,7 @@ import time
 
 import math
 import numpy as np
+import pinocchio as pin
 import pybullet as p
 import pybullet_data
 
@@ -60,16 +61,17 @@ planeId = p.loadURDF("plane.urdf")
 p.setGravity(0, 0, -10)
 
 opendog = OpenDog()
-traj = trajectoryUpAndDown(opendog.motors)
+traj = trajectoryUpAndDown(opendog)
+
 
 # Initialization time
-for i in range(3 * TICK_RATE):
+for i in range(3):#3*TICK_RATE
     p.stepSimulation()  
     time.sleep(TICK_RATE)
 
 # Simulation loop
 for i in range(10000):
-    p.stepSimulation()        
+    p.stepSimulation()   
 
     for j in range(len(traj)):
         opendog.updateMotors()
@@ -77,13 +79,14 @@ for i in range(10000):
         pin.updateFramePlacements(opendog.model, opendog.data) 
 
         X0 = []            
-        for k in self.frames: # Marche mais récupère les données dans pybullet au lieu du modèle de pinocchio
+        for k in opendog.frames: # Marche mais récupère les données dans pybullet au lieu du modèle de pinocchio
             X0.extend(p.getLinkState(opendog.id, k)[:2][0])
             X0.extend(p.getLinkState(opendog.id, k)[:2][1][:-1])
         dX = np.subtract(traj[j], X0)
 
         
-        J = pin.computeJointJacobian(opendog.model, opendog.data)
+        J = pin.computeJointJacobians(opendog.model, opendog.data)
+        print(J)
         dq = J.T @ dX
         q = opendog.motors + dq
 

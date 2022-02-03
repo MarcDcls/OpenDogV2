@@ -10,19 +10,22 @@ from customExecption import *
 from ray_casting_algorithm import *
 
 class OpenDog:
+    """
+    Class description
+    """
+    #__slots__ = ['id','joint_name_to_id','model','collision_model','visual_model','data','collision_data','visual_data','motors','frames', 'joints']
 
-    def __init__(
-            self,
-    ):
-
+    def __init__(self) :
         self.id = p.loadURDF("urdf/robot.urdf", [0, 0, 0.6], p.getQuaternionFromEuler([0, 0, 0]))
         self._buildJointNameToIdDict()
         self.model, self.collision_model, self.visual_model  = self._generatePinocchioModels()
         self.data, self.collision_data, self.visual_data = pin.createDatas(self.model, self.collision_model, self.visual_model)
-        self.motors = _motorsInitialization()
-        self.frames=[0,4,8,12,16]
-        self.joints=[1,2,3,5,6,7,9,10,11,13,14,15]
+        self.frames = [0, 4, 8, 12, 16]
+        self.joints = [1, 2, 3, 5, 6, 7, 9, 10, 11, 13, 14, 15]
+        self.motors = self._motorsInitialization()
 
+
+     
     def _buildJointNameToIdDict(self):
         num_joints = p.getNumJoints(self.id)
         self.joint_name_to_id = {}
@@ -40,7 +43,7 @@ class OpenDog:
     def _motorsInitialization(self):
         for joint in self.joints :
             p.setJointMotorControl2(self.id, joint, p.POSITION_CONTROL, targetPosition=0, force=1000, maxVelocity=3)
-        return [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        return np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
     # def moveCylinders(self, V, force):
     #     for i in range(12):
@@ -96,8 +99,8 @@ class OpenDog:
     def updateMotors(self):
         m = []            
         for j in self.joints:
-            m.append(getJointState(self.id, j)[0]
-        self.motors = m
+            m.append(p.getJointState(self.id, j)[0])
+        self.motors = np.array(m)
 
     def getCOM(self):
         """
@@ -301,10 +304,6 @@ class OpenDog:
         return res
 
 
-
-
-
-
     def getLegAngularPositions(self, idLeg):
         """
         Return the angular position of a given leg
@@ -312,10 +311,10 @@ class OpenDog:
         :param: leg identifiant as 'bl', 'br', 'fl' or 'fr'
         """
         try :
-            if idLeg == "fl" or idLeg == "fr" or idLeg == "bl" or idLeg == "br" : 
-            return [getJointAngularPosition('hip_' + idLeg),
-                    getJointAngularPosition('knee_' + idLeg),
-                    getJointAngularPosition('ankle_' + idLeg)]
+            if idLeg == "fl" or idLeg == "fr" or idLeg == "bl" or idLeg == "br" :
+                return [getJointAngularPosition('hip_' + idLeg),
+                        getJointAngularPosition('knee_' + idLeg),
+                        getJointAngularPosition('ankle_' + idLeg)]
             else :
                 raise InputNotRecognizedAsLeg
 

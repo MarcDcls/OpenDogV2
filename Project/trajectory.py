@@ -1,4 +1,5 @@
 import numpy as np
+import pybullet as p
 import pinocchio as pin
 import operator
 
@@ -11,6 +12,7 @@ def trajectoryUpAndDown(opendog, length=500, dist=0.2):
     :param dist: heigth of the step / distance on z
     :return: List of cartesian coordinates
     """
+    print(type(opendog.motors))
     pin.forwardKinematics(opendog.model, opendog.data, opendog.motors)
     X0 = [] # vector of 30 values
     for i in opendog.frames:
