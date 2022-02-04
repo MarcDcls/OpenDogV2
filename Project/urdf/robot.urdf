@@ -2302,17 +2302,17 @@
 </inertial>
 </link>
 
-<link name="foot_lr">
+<link name="foot_fr">
 <inertial>
 <origin xyz="0 0 0" rpy="0 0 0" />
 <mass value="1e-9" />
 <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
 </inertial>
 </link>
-<joint name="foot_lr_frame" type="fixed">
+<joint name="foot_fr_frame" type="fixed">
 <origin xyz="1.44661e-05 -0.195916 -0.0978296" rpy="-1.5708 1.5708 0" />
 <parent link="lowerleg_2" />
-<child link="foot_lr" />
+<child link="foot_fr" />
 <axis xyz="0 0 0"/>
 </joint>
 
