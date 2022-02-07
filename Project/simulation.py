@@ -42,10 +42,12 @@ for i in range(10000):
     p.stepSimulation()
     print(i)
 
+
     if (i > 99) and (i < (100+len(traj))):
         opendog.updateMotors(res[-1])
         pin.forwardKinematics(opendog.model, opendog.data, res[-1])
         pin.updateFramePlacements(opendog.model, opendog.data)
+        pin.computeJointJacobians(opendog.model, opendog.data, res[-1])
 
         # Get real cartesian position
         X = np.array([])
@@ -58,11 +60,13 @@ for i in range(10000):
         # Jacobian calculation -> J = [ J_CF, J_FL, J_FR, J_BL, J_BR ]
         for k in opendog.pinFrames:
             if k == 3:
-                J = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
+                J = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.LOCAL)
+                # J = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
                 # J = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
                 # print("new J",J)
             else:
-                J_tmp = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
+                J_tmp = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.LOCAL)
+                # J_tmp = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
                 # J_tmp = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
                 J = np.vstack((J, J_tmp))
                 # print("new J",J_tmp)

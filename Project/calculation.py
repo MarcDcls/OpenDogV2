@@ -20,6 +20,7 @@ def calculMotors_trajectoryUpAndDown(robot):
         robot.updateMotors(res[-1])
         pin.forwardKinematics(robot.model, robot.data, res[-1])
         pin.updateFramePlacements(robot.model, robot.data)
+        pin.computeJointJacobians(robot.model, robot.data, res[-1])
 
         #Get real cartesian position
         X = np.array([])
@@ -36,10 +37,14 @@ def calculMotors_trajectoryUpAndDown(robot):
             # print(fJ_tmp)
             # J_tmp=oRf_tmp@fJ_tmp
             if k == 3:
-                J = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                J = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.LOCAL_WORLD_ALIGNED)
+                # J = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                # J = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.LOCAL)
                 #print("new J",J)
             else:
-                J_tmp = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                J_tmp = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.LOCAL_WORLD_ALIGNED)
+                # J_tmp = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                # J_tmp = pin.computeFrameJacobian(robot.model, robot.data, res[-1], k, pin.ReferenceFrame.LOCAL)
                 J = np.vstack((J, J_tmp))
                 #print("new J",J_tmp)
 
