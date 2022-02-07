@@ -1,5 +1,6 @@
 import time
 
+import pybullet as p
 import pybullet_data
 
 from calculation import calculMotors_trajectoryUpAndDown
@@ -39,16 +40,17 @@ res = [opendog.motors]
 # Simulation loop
 for i in range(10000):
     p.stepSimulation()
+    print(i)
 
-    while i > 99 and i < (100+len(traj)) :
+    if (i > 99) and (i < (100+len(traj))):
         opendog.updateMotors(res[-1])
         pin.forwardKinematics(opendog.model, opendog.data, res[-1])
         pin.updateFramePlacements(opendog.model, opendog.data)
 
         # Get real cartesian position
         X = np.array([])
-        for frame in opendog.URDFFrames:
-            X = np.hstack((X, getFrameCartesianPosition(opendogSimu,frame)))
+        for frame in opendog.URDFframes:
+            X = np.hstack((X, getFrameCartesianPosition(opendogSimu, frame)))
 
         # Error calculation : dX
         dX = np.subtract(traj[i-100], X)
@@ -56,24 +58,25 @@ for i in range(10000):
         # Jacobian calculation -> J = [ J_CF, J_FL, J_FR, J_BL, J_BR ]
         for k in opendog.pinFrames:
             if k == 3:
-                J = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                J = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
+                # J = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
                 # print("new J",J)
             else:
-                J_tmp = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
+                J_tmp = pin.getFrameJacobian(opendog.model, opendog.data, k, pin.ReferenceFrame.WORLD)
+                # J_tmp = pin.computeFrameJacobian(opendog.model, opendog.data, res[-1], k, pin.ReferenceFrame.WORLD)
                 J = np.vstack((J, J_tmp))
                 # print("new J",J_tmp)
 
-            # Angular position variation
-            dq = J.T @ dX
+        # Angular position variation
+        dq = J.T @ dX
 
-            # New angular position
-            q = np.add(res[-1], dq)
+        # New angular position
+        q = np.add(res[-1], dq)
 
-            res.append(q)
+        res.append(q)
 
-            moveMotors(opendogSimu, res[q])
+        moveMotors(opendogSimu, res[-1])
 
     time.sleep(TICK_RATE)
 
 p.disconnect()
-

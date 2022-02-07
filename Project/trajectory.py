@@ -32,6 +32,7 @@ def trajectoryUpAndDown(opendog, length=500, dist=0.2, orientation=True):
         for frame in opendog.pinFrames:
             X0 = np.hstack((X0, opendog.data.oMf[frame].translation))
             #X0.extend(p.getLinkState(opendog.id,i)[0])
+
     traj = [X0]
     for i in range(length//2):
         next_X = list(map(operator.sub, traj[-1], vect))
