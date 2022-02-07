@@ -3,8 +3,6 @@ import operator
 import pinocchio as pin
 import pybullet as p
 
-from open_dog import OpenDog
-
 def trajectoryUpAndDown(opendog, length=500, dist=0.2, orientation=True):
     """
     Generate a trajectory of cartesian coordinates
@@ -18,7 +16,7 @@ def trajectoryUpAndDown(opendog, length=500, dist=0.2, orientation=True):
     pin.forwardKinematics(opendog.model, opendog.data, opendog.motors)
     pin.framesForwardKinematics(opendog.model, opendog.data, opendog.motors)
 
-    X0 = np.array([])# vector of 30 values
+    X0 = np.array([])# vector of 30 values if orientation == true
 
     if orientation:
         vect = [0, 0, ((2*dist)/length), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -46,18 +44,48 @@ def trajectoryUpAndDown(opendog, length=500, dist=0.2, orientation=True):
 #opendog=OpenDog()
 #print(trajectoryUpAndDown(opendog))
 
-# def ftraj(t, x0, z0):  # arguments : time, initial position x and z
-#     """
-#     from : https://github.com/EtienneAr/ISAE-PIE-quadruped-solo_pybullet/blob/master/solo_pybullet/controller.py
-#     """
-#     global T, dx, dz
-#     x = []
-#     z = []
-#     if t >= T:
-#         t %= T
-#     x.append(x0 - dx * np.cos(2 * np.pi * t / T))
-#     if t <= T / 2.:
-#         z.append(z0 + dz * np.sin(2 * np.pi * t / T))
-#     else:
-#         z.append(0)
-#     return np.matrix([x, z])
+
+def footTrajectory(opendog, idFrame, t, orientation=True):
+    # modifier si on calcule la position
+    traj = []
+    T = 0.2  # period of the foot trajectory
+    dx = 0.03  # displacement amplitude by x
+    dz = 0.06  # displacement amplitude by z
+    x = []
+    y = []
+    z = []
+    if orientation:
+        return traj
+    else:
+        xyz = opendog.data.oMf[idFrame].translation
+        x0 = xyz[0]
+        y0 = xyz[1]
+        z0 = xyz[2]
+        if t >= T:
+            t %= T
+        x.append(x0 - dx * np.cos(2 * np.pi * t / T))
+        if t <= T / 2.:
+            z.append(z0 + dz * np.sin(2 * np.pi * t / T))
+        else:
+            z.append(0)
+        return traj
+
+
+def ftraj(t, x0, z0):  # arguments : time, initial position x and z
+    """
+    from : https://github.com/EtienneAr/ISAE-PIE-quadruped-solo_pybullet/blob/master/solo_pybullet/controller.py
+    """
+    #global T, dx, dz
+    T = 0.2  # period of the foot trajectory
+    dx = 0.03  # displacement amplitude by x
+    dz = 0.06  # displacement amplitude by z
+    x = []
+    z = []
+    if t >= T:
+        t %= T
+    x.append(x0 - dx * np.cos(2 * np.pi * t / T))
+    if t <= T / 2.:
+        z.append(z0 + dz * np.sin(2 * np.pi * t / T))
+    else:
+        z.append(0)
+    return np.matrix([x, z])
